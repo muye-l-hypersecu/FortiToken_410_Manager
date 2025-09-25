@@ -7,6 +7,7 @@ namespace FortiToken_410_Manager
 {
     public partial class Form1 : Form
     {
+        public static Form1 MainForm = null;
         int DisplayAPDU = 1;
 
         // public defines
@@ -26,21 +27,78 @@ namespace FortiToken_410_Manager
         public Form1()
         {
             InitializeComponent();
+            MainForm = this;
             Thread th = new Thread(new ThreadStart(CallbackFunc));
             th.IsBackground = true;
+            if (th == null)
+            {
+                DialogResult result = MessageBox.Show("Thread error occured.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (result == DialogResult.OK)
+                {
+                    return;
+                }
+            }
 
-            //keyStateLabel.Text = "Insert a FortiToken 410 Security Key.";
+            Form1.MainForm.keyStateLabel.Hide();
+
+            th.Start();
+            CSCallbackFunc(1);
         }
 
         static void CallbackFunc()
         {
             callback = CSCallbackFunc;
-           startDeviceNotify(callback);
+            startDeviceNotify(callback);
         }
 
         static void CSCallbackFunc(int n)
         {
+            if (n == 0)
+            {
+                Form1.MainForm.keyStateLabel.Show();
+                Form1.MainForm.keyStateLabel.Text = "Key removed.";
+                fidoU2F_close();
+            }
+            else if (n == 1)
+            {
+                int ret;
+                ret = fidoU2F_find(vid); // searches USB
+                if (ret <= 0)
+                {
+                    Form1.MainForm.keyStateLabel.Text = "This is not a FortiToken 410 key.";
+                    return;
+                }
 
+                ret = fidoU2F_open();
+                if (ret != 0)
+                {
+                    Form1.MainForm.keyStateLabel.Text = "Open key error.";
+                    return;
+                }
+                else
+                {
+                    Form1.MainForm.keyStateLabel.Show();
+                    Form1.MainForm.keyStateLabel.Text = "FortiToken410 connected: ";
+                    int p = fidoU2F_get_protocol();
+
+                    switch (p)
+                    {
+                        case 0:
+                            Form1.MainForm.keyStateLabel.Text += "HOTP only";
+                            break;
+                        case 1:
+                            Form1.MainForm.keyStateLabel.Text += "FIDO only";
+                            break;
+                        case 2:
+                            Form1.MainForm.keyStateLabel.Text += "FIDO and HOTP";
+                            break;
+                        default:
+                            Form1.MainForm.keyStateLabel.Text += "Key Protocol is unavailable, Error code: " + ret.ToString("X");
+                            break;
+
+                    }
+                }
+            }
         }
 
 
@@ -242,5 +300,9 @@ namespace FortiToken_410_Manager
 
         }
 
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

@@ -21,6 +21,9 @@ public static class HyperFIDO
     [DllImport("HyperFIDO.dll", CallingConvention = CallingConvention.Cdecl)]
     public static extern int fidoU2F_close();
 
+    [DllImport("HyperFIDO.dll", CallingConvention = CallingConvention.Cdecl)]
+    public static extern int fidoU2F_get_protocol();
+
     //Convert byte to Hex String
     public static string byteToHexStr(byte[] bytes)
     {

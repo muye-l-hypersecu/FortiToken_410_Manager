@@ -30,15 +30,15 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             tableLayoutPanel1 = new TableLayoutPanel();
-            HOTPStatusLabel = new Label();
-            tableLayoutPanel2 = new TableLayoutPanel();
+            Title = new Label();
+            listBox1 = new ListBox();
+            tableLayoutPanel3 = new TableLayoutPanel();
             BtnDisableHOTP = new Button();
             BtnEnableHOTP = new Button();
-            Title = new Label();
             keyStateLabel = new Label();
-            listBox1 = new ListBox();
+            label1 = new Label();
             tableLayoutPanel1.SuspendLayout();
-            tableLayoutPanel2.SuspendLayout();
+            tableLayoutPanel3.SuspendLayout();
             SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -46,55 +46,69 @@
             tableLayoutPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tableLayoutPanel1.ColumnCount = 1;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.Controls.Add(HOTPStatusLabel, 0, 2);
-            tableLayoutPanel1.Controls.Add(tableLayoutPanel2, 0, 3);
             tableLayoutPanel1.Controls.Add(Title, 0, 0);
-            tableLayoutPanel1.Controls.Add(keyStateLabel, 0, 1);
             tableLayoutPanel1.Controls.Add(listBox1, 0, 4);
+            tableLayoutPanel1.Controls.Add(tableLayoutPanel3, 0, 3);
+            tableLayoutPanel1.Controls.Add(keyStateLabel, 0, 2);
+            tableLayoutPanel1.Controls.Add(label1, 0, 1);
             tableLayoutPanel1.Location = new Point(5, 5);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 5;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 12.6564674F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 10.5702362F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 12.5173855F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 18.3588314F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 45.7579956F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 14.5600052F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 13.636364F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 19.2640686F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 52.5974045F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 256F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 167F));
             tableLayoutPanel1.Size = new Size(998, 719);
             tableLayoutPanel1.TabIndex = 0;
+            tableLayoutPanel1.Paint += tableLayoutPanel1_Paint;
             // 
-            // HOTPStatusLabel
+            // Title
             // 
-            HOTPStatusLabel.Anchor = AnchorStyles.Left;
-            HOTPStatusLabel.AutoSize = true;
-            HOTPStatusLabel.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            HOTPStatusLabel.Location = new Point(3, 193);
-            HOTPStatusLabel.Name = "HOTPStatusLabel";
-            HOTPStatusLabel.Size = new Size(103, 37);
-            HOTPStatusLabel.TabIndex = 3;
-            HOTPStatusLabel.Text = "Status:";
+            Title.Anchor = AnchorStyles.Left;
+            Title.AutoSize = true;
+            Title.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Title.Location = new Point(3, 15);
+            Title.Name = "Title";
+            Title.Size = new Size(333, 37);
+            Title.TabIndex = 1;
+            Title.Text = "FortiToken 410 Manager";
             // 
-            // tableLayoutPanel2
+            // listBox1
             // 
-            tableLayoutPanel2.Anchor = AnchorStyles.Left;
-            tableLayoutPanel2.ColumnCount = 2;
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 29.7843666F));
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 70.21564F));
-            tableLayoutPanel2.Controls.Add(BtnDisableHOTP, 1, 0);
-            tableLayoutPanel2.Controls.Add(BtnEnableHOTP, 0, 0);
-            tableLayoutPanel2.Location = new Point(3, 261);
-            tableLayoutPanel2.Name = "tableLayoutPanel2";
-            tableLayoutPanel2.RowCount = 1;
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel2.Size = new Size(992, 124);
-            tableLayoutPanel2.TabIndex = 0;
+            listBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            listBox1.BackColor = SystemColors.ControlLight;
+            listBox1.BorderStyle = BorderStyle.None;
+            listBox1.ForeColor = Color.Red;
+            listBox1.FormattingEnabled = true;
+            listBox1.ItemHeight = 15;
+            listBox1.Location = new Point(3, 465);
+            listBox1.Name = "listBox1";
+            listBox1.Size = new Size(992, 240);
+            listBox1.TabIndex = 4;
+            // 
+            // tableLayoutPanel3
+            // 
+            tableLayoutPanel3.Anchor = AnchorStyles.Left;
+            tableLayoutPanel3.ColumnCount = 2;
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 23.5887089F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 76.41129F));
+            tableLayoutPanel3.Controls.Add(BtnDisableHOTP, 1, 0);
+            tableLayoutPanel3.Controls.Add(BtnEnableHOTP, 0, 0);
+            tableLayoutPanel3.Location = new Point(3, 222);
+            tableLayoutPanel3.Name = "tableLayoutPanel3";
+            tableLayoutPanel3.RowCount = 1;
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel3.Size = new Size(992, 237);
+            tableLayoutPanel3.TabIndex = 5;
             // 
             // BtnDisableHOTP
             // 
             BtnDisableHOTP.Anchor = AnchorStyles.Left;
             BtnDisableHOTP.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            BtnDisableHOTP.Location = new Point(298, 37);
+            BtnDisableHOTP.Location = new Point(237, 94);
             BtnDisableHOTP.Name = "BtnDisableHOTP";
             BtnDisableHOTP.Size = new Size(176, 49);
             BtnDisableHOTP.TabIndex = 1;
@@ -106,7 +120,7 @@
             // 
             BtnEnableHOTP.Anchor = AnchorStyles.Left;
             BtnEnableHOTP.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            BtnEnableHOTP.Location = new Point(3, 37);
+            BtnEnableHOTP.Location = new Point(3, 94);
             BtnEnableHOTP.Name = "BtnEnableHOTP";
             BtnEnableHOTP.Size = new Size(176, 49);
             BtnEnableHOTP.TabIndex = 0;
@@ -114,39 +128,25 @@
             BtnEnableHOTP.UseVisualStyleBackColor = true;
             BtnEnableHOTP.Click += BtnEnableHOTP_Click;
             // 
-            // Title
-            // 
-            Title.Anchor = AnchorStyles.Left;
-            Title.AutoSize = true;
-            Title.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Title.Location = new Point(3, 27);
-            Title.Name = "Title";
-            Title.Size = new Size(333, 37);
-            Title.TabIndex = 1;
-            Title.Text = "FortiToken 410 Manager";
-            // 
             // keyStateLabel
             // 
             keyStateLabel.Anchor = AnchorStyles.Left;
             keyStateLabel.AutoSize = true;
-            keyStateLabel.Font = new Font("Segoe UI", 12F);
-            keyStateLabel.Location = new Point(3, 118);
+            keyStateLabel.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            keyStateLabel.Location = new Point(3, 158);
             keyStateLabel.Name = "keyStateLabel";
-            keyStateLabel.Size = new Size(0, 21);
+            keyStateLabel.Size = new Size(0, 32);
             keyStateLabel.TabIndex = 2;
             // 
-            // listBox1
+            // label1
             // 
-            listBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            listBox1.BackColor = SystemColors.ControlLight;
-            listBox1.BorderStyle = BorderStyle.None;
-            listBox1.ForeColor = Color.Red;
-            listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 15;
-            listBox1.Location = new Point(3, 392);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(992, 315);
-            listBox1.TabIndex = 4;
+            label1.Anchor = AnchorStyles.Left;
+            label1.AutoSize = true;
+            label1.Location = new Point(3, 91);
+            label1.Name = "label1";
+            label1.Size = new Size(189, 15);
+            label1.TabIndex = 6;
+            label1.Text = "Insert a FortiToken 410 key to start.";
             // 
             // Form1
             // 
@@ -163,19 +163,19 @@
             Text = "FortiToken 410 Manager";
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
-            tableLayoutPanel2.ResumeLayout(false);
+            tableLayoutPanel3.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
 
         private TableLayoutPanel tableLayoutPanel1;
-        private TableLayoutPanel tableLayoutPanel2;
-        private Label Title;
-        private Label keyStateLabel;
-        private Label HOTPStatusLabel;
-        private Button BtnEnableHOTP;
         private Button BtnDisableHOTP;
+        private Button BtnEnableHOTP;
+        private Label keyStateLabel;
+        private Label Title;
         private ListBox listBox1;
+        private TableLayoutPanel tableLayoutPanel3;
+        private Label label1;
     }
 }
