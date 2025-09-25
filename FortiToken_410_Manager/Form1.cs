@@ -191,8 +191,7 @@ namespace FortiToken_410_Manager
             }
 
             if (null != recvBuf)
-
-
+            {
                 if ((recvBuf[0] == 0x90) && (recvBuf[1] == 0x00))
                 {
                     MsgBoxMessage = "Disable HOTP successful.\r\nRe-insert the key to program. ";
@@ -213,9 +212,9 @@ namespace FortiToken_410_Manager
                 }
             }
 
-
-
             HyperFIDO.fidoU2F_close();
+
+
         }
     }
 }
