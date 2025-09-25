@@ -114,7 +114,7 @@ namespace FortiToken_410_Manager
             byte[] recvBuf = new byte[64];
             uint recvLen = 64;
 
-            MsgBoxMessage = "HOTP feature on this key will be enabled. Do you want to continue?\r\n\r\nClick Yes to Enable, click No to cancel.\r\n\r\nTo complete the process, click Yes, then press the button on the key within 5 seconds when the green light begins flashing.";
+            MsgBoxMessage = "HOTP feature on this key will be enabled.\r\n\r\nClick Yes to continue, click No to cancel.";
             MsgBoxCaption = "";
             MsgBoxButtons = MessageBoxButtons.YesNo;
 
@@ -184,7 +184,8 @@ namespace FortiToken_410_Manager
                     MsgBoxButtons = MessageBoxButtons.OK;
 
                     MsgBoxResult = MessageBox.Show(MsgBoxMessage, MsgBoxCaption, MsgBoxButtons, MessageBoxIcon.Information);
-
+                    Form1.MainForm.keyStateLabel.Text = "FortiToken410 connected: FIDO and HOTP";
+                    //BtnEnableHOTP.Enabled = false;
                 }
                 else
                 {
@@ -196,9 +197,6 @@ namespace FortiToken_410_Manager
 
                 }
             }
-
-
-
             HyperFIDO.fidoU2F_close();
         }
 
@@ -214,7 +212,7 @@ namespace FortiToken_410_Manager
             byte[] recvBuf = new byte[64];
             uint recvLen = 64;
 
-            MsgBoxMessage = "HOTP feature on this key will be disabled. Do you want to continue?\r\n\r\nClick Yes to Enable, click No to cancel.\r\n\r\nTo complete the process, click Yes, then press the button on the key within 5 seconds when the green light begins flashing.";
+            MsgBoxMessage = "HOTP feature on this key will be disabled.\r\n\r\nClick Yes to continue, click No to cancel.";
             MsgBoxCaption = "";
             MsgBoxButtons = MessageBoxButtons.YesNo;
 
@@ -282,7 +280,8 @@ namespace FortiToken_410_Manager
                     MsgBoxButtons = MessageBoxButtons.OK;
 
                     MsgBoxResult = MessageBox.Show(MsgBoxMessage, MsgBoxCaption, MsgBoxButtons, MessageBoxIcon.Information);
-
+                    Form1.MainForm.keyStateLabel.Text = "FortiToken410 connected: FIDO only";
+                    //BtnDisableHOTP.Enabled = false;
                 }
                 else
                 {
