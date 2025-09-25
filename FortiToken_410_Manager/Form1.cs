@@ -1,5 +1,7 @@
 using Microsoft.VisualBasic;
+using System.Runtime.InteropServices;
 using Utility;
+using static Utility.HyperFIDO;
 
 namespace FortiToken_410_Manager
 {
@@ -14,10 +16,33 @@ namespace FortiToken_410_Manager
         DialogResult MsgBoxResult;
         const int vid = 0x2ccf;
 
+        [DllImport("HyperFIDO.dll", CallingConvention = CallingConvention.Cdecl)]
+        static extern void startDeviceNotify(CSCallback callback);
+
+        public delegate void CSCallback(int n);
+
+        static CSCallback callback;
+
         public Form1()
         {
             InitializeComponent();
+            Thread th = new Thread(new ThreadStart(CallbackFunc));
+            th.IsBackground = true;
+
+            //keyStateLabel.Text = "Insert a FortiToken 410 Security Key.";
         }
+
+        static void CallbackFunc()
+        {
+            callback = CSCallbackFunc;
+           startDeviceNotify(callback);
+        }
+
+        static void CSCallbackFunc(int n)
+        {
+
+        }
+
 
         private void BtnEnableHOTP_Click(object sender, EventArgs e)
         {
@@ -216,5 +241,6 @@ namespace FortiToken_410_Manager
 
 
         }
+
     }
 }

@@ -132,9 +132,8 @@
             keyStateLabel.Font = new Font("Segoe UI", 12F);
             keyStateLabel.Location = new Point(3, 118);
             keyStateLabel.Name = "keyStateLabel";
-            keyStateLabel.Size = new Size(260, 21);
+            keyStateLabel.Size = new Size(0, 21);
             keyStateLabel.TabIndex = 2;
-            keyStateLabel.Text = "Insert a FortiToken 410 Security Key.";
             // 
             // listBox1
             // 
