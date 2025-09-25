@@ -89,7 +89,7 @@ namespace FortiToken_410_Manager
             {
 
 
-                MsgBoxMessage = "Open HyperFIDO Pro error, click OK to return";
+                MsgBoxMessage = "Open HyperFIDO Pro error, click OK to return.";
                 MsgBoxCaption = "";
                 MsgBoxButtons = MessageBoxButtons.OK;
 
@@ -121,7 +121,7 @@ namespace FortiToken_410_Manager
 
                 if ((recvBuf[0] == 0x90) && (recvBuf[1] == 0x00))
                 {
-                    MsgBoxMessage = "Enable HOTP successful.\r\nRe-insert the key to program. ";
+                    MsgBoxMessage = "Enable HOTP successful.";
                     MsgBoxCaption = "";
                     MsgBoxButtons = MessageBoxButtons.OK;
 
@@ -189,7 +189,7 @@ namespace FortiToken_410_Manager
             {
 
 
-                MsgBoxMessage = "Open HyperFIDO Pro error, click OK to return";
+                MsgBoxMessage = "Token Key Open Error, click OK to return";
                 MsgBoxCaption = "";
                 MsgBoxButtons = MessageBoxButtons.OK;
 
@@ -219,7 +219,7 @@ namespace FortiToken_410_Manager
             {
                 if ((recvBuf[0] == 0x90) && (recvBuf[1] == 0x00))
                 {
-                    MsgBoxMessage = "Disable HOTP successful.\r\nRe-insert the key to program. ";
+                    MsgBoxMessage = "Disable HOTP successful.";
                     MsgBoxCaption = "";
                     MsgBoxButtons = MessageBoxButtons.OK;
 
