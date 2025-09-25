@@ -31,8 +31,8 @@
             tableLayoutPanel1 = new TableLayoutPanel();
             HOTPStatusLabel = new Label();
             tableLayoutPanel2 = new TableLayoutPanel();
-            button2 = new Button();
-            button1 = new Button();
+            BtnDisableHOTP = new Button();
+            BtnEnableHOTP = new Button();
             Title = new Label();
             keyStateLabel = new Label();
             listBox1 = new ListBox();
@@ -79,8 +79,8 @@
             tableLayoutPanel2.ColumnCount = 2;
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 29.7843666F));
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 70.21564F));
-            tableLayoutPanel2.Controls.Add(button2, 1, 0);
-            tableLayoutPanel2.Controls.Add(button1, 0, 0);
+            tableLayoutPanel2.Controls.Add(BtnDisableHOTP, 1, 0);
+            tableLayoutPanel2.Controls.Add(BtnEnableHOTP, 0, 0);
             tableLayoutPanel2.Location = new Point(3, 261);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 1;
@@ -89,27 +89,29 @@
             tableLayoutPanel2.Size = new Size(992, 124);
             tableLayoutPanel2.TabIndex = 0;
             // 
-            // button2
+            // BtnDisableHOTP
             // 
-            button2.Anchor = AnchorStyles.Left;
-            button2.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button2.Location = new Point(298, 37);
-            button2.Name = "button2";
-            button2.Size = new Size(176, 49);
-            button2.TabIndex = 1;
-            button2.Text = "Disable HOTP";
-            button2.UseVisualStyleBackColor = true;
+            BtnDisableHOTP.Anchor = AnchorStyles.Left;
+            BtnDisableHOTP.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            BtnDisableHOTP.Location = new Point(298, 37);
+            BtnDisableHOTP.Name = "BtnDisableHOTP";
+            BtnDisableHOTP.Size = new Size(176, 49);
+            BtnDisableHOTP.TabIndex = 1;
+            BtnDisableHOTP.Text = "Disable HOTP";
+            BtnDisableHOTP.UseVisualStyleBackColor = true;
+            BtnDisableHOTP.Click += BtnDisableHOTP_Click;
             // 
-            // button1
+            // BtnEnableHOTP
             // 
-            button1.Anchor = AnchorStyles.Left;
-            button1.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.Location = new Point(3, 37);
-            button1.Name = "button1";
-            button1.Size = new Size(176, 49);
-            button1.TabIndex = 0;
-            button1.Text = "Enable HOTP";
-            button1.UseVisualStyleBackColor = true;
+            BtnEnableHOTP.Anchor = AnchorStyles.Left;
+            BtnEnableHOTP.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            BtnEnableHOTP.Location = new Point(3, 37);
+            BtnEnableHOTP.Name = "BtnEnableHOTP";
+            BtnEnableHOTP.Size = new Size(176, 49);
+            BtnEnableHOTP.TabIndex = 0;
+            BtnEnableHOTP.Text = "Enable HOTP";
+            BtnEnableHOTP.UseVisualStyleBackColor = true;
+            BtnEnableHOTP.Click += BtnEnableHOTP_Click;
             // 
             // Title
             // 
@@ -171,8 +173,8 @@
         private Label Title;
         private Label keyStateLabel;
         private Label HOTPStatusLabel;
-        private Button button1;
-        private Button button2;
+        private Button BtnEnableHOTP;
+        private Button BtnDisableHOTP;
         private ListBox listBox1;
     }
 }
