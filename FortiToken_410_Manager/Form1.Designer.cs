@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             tableLayoutPanel1 = new TableLayoutPanel();
             HOTPStatusLabel = new Label();
             tableLayoutPanel2 = new TableLayoutPanel();
@@ -154,6 +155,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1008, 729);
             Controls.Add(tableLayoutPanel1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             MaximumSize = new Size(1024, 768);
             MinimizeBox = false;
