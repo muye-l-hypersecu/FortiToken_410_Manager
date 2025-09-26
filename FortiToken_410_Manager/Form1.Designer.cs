@@ -138,6 +138,7 @@
             // BtnDisableHOTP
             // 
             BtnDisableHOTP.Anchor = AnchorStyles.None;
+            BtnDisableHOTP.Enabled = false;
             BtnDisableHOTP.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
             BtnDisableHOTP.Location = new Point(581, 71);
             BtnDisableHOTP.Name = "BtnDisableHOTP";
@@ -150,6 +151,7 @@
             // BtnEnableHOTP
             // 
             BtnEnableHOTP.Anchor = AnchorStyles.None;
+            BtnEnableHOTP.Enabled = false;
             BtnEnableHOTP.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
             BtnEnableHOTP.Location = new Point(85, 71);
             BtnEnableHOTP.Name = "BtnEnableHOTP";
