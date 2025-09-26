@@ -150,7 +150,7 @@ namespace FortiToken_410_Manager
             {
 
 
-                MsgBoxMessage = "Open HyperFIDO Pro error, click OK to return.";
+                MsgBoxMessage = "Open FortiToken 410 error, click OK to return.";
                 MsgBoxCaption = "";
                 MsgBoxButtons = MessageBoxButtons.OK;
 
