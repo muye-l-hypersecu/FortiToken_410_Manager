@@ -53,7 +53,7 @@ namespace FortiToken_410_Manager
         {
             if (n == 0)
             {
-                Form1.MainForm.keyStateLabel.Text = "FortiToken 410 Key Not Inserted.";
+                Form1.MainForm.keyStateLabel.Text = "FortiToken 410 key not inserted.";
                 Form1.MainForm.promptLabel.Text = string.Empty;
                 Form1.MainForm.BtnDisableHOTP.Enabled = false;
                 Form1.MainForm.BtnEnableHOTP.Enabled = false;
@@ -65,7 +65,7 @@ namespace FortiToken_410_Manager
                 ret = fidoU2F_find(vid); // searches USB
                 if (ret <= 0)
                 {
-                    Form1.MainForm.keyStateLabel.Text = "FortiToken 410 Key Not Inserted.";
+                    Form1.MainForm.keyStateLabel.Text = "FortiToken 410 key not inserted.";
                     return;
                 }
 
