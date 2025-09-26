@@ -136,7 +136,7 @@ namespace FortiToken_410_Manager
             if (ret <= 0)
             {
 
-                MsgBoxMessage = "Valid key not found. Ensure key is inserted properly or you are using a HyperFIDO Pro key.";
+                MsgBoxMessage = "Valid key not found. Ensure key is inserted properly or you are using a FortiToken 410 key.";
                 MsgBoxCaption = "";
                 MsgBoxButtons = MessageBoxButtons.OK;
 
@@ -235,7 +235,7 @@ namespace FortiToken_410_Manager
             if (ret <= 0)
             {
 
-                MsgBoxMessage = "Valid key not found. Ensure key is inserted properly or you are using a HyperFIDO Pro key.";
+                MsgBoxMessage = "Valid key not found. Ensure key is inserted properly or you are using a FortiToken 410 key.";
                 MsgBoxCaption = "";
                 MsgBoxButtons = MessageBoxButtons.OK;
 
