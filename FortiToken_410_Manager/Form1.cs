@@ -184,7 +184,7 @@ namespace FortiToken_410_Manager
                     MsgBoxButtons = MessageBoxButtons.OK;
 
                     MsgBoxResult = MessageBox.Show(MsgBoxMessage, MsgBoxCaption, MsgBoxButtons, MessageBoxIcon.Information);
-                    Form1.MainForm.keyStateLabel.Text = "FortiToken410 connected: FIDO and HOTP";
+                    Form1.MainForm.keyStateLabel.Text = "FortiToken 410 connected: FIDO and HOTP";
                     //BtnEnableHOTP.Enabled = false;
                 }
                 else
