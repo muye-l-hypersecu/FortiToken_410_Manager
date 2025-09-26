@@ -78,7 +78,7 @@ namespace FortiToken_410_Manager
                 else
                 {
                     Form1.MainForm.keyStateLabel.Show();
-                    Form1.MainForm.keyStateLabel.Text = "FortiToken410 connected: ";
+                    Form1.MainForm.keyStateLabel.Text = "FortiToken 410 connected: ";
                     int p = fidoU2F_get_protocol();
 
                     switch (p)
