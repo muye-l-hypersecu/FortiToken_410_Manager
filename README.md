@@ -32,10 +32,11 @@
 - A FortiToken 410
 
 ### Instructions:
-Run FortiToken_410_Manager.exe as administrator.   
-The file exists in:   
-\FortiToken_410_Manager\FortiToken_410_Manager\bin\x86\Release\net8.0-windows
+- Run ```FortiToken_410_Manager.exe``` as **Administrator**.   
+- The file is found in:   
+```\FortiToken_410_Manager\FortiToken_410_Manager\bin\x86\Release\net8.0-windows```
+- *Please ignore the other folders in the ```bin``` folder.
 
 ## Credits:
-- Reference: VS2022-HyperFIDOPro-HOTP-Seed-Generator
-- Authors: Mu Ye, Sakura
+- **Reference:** VS2022-HyperFIDOPro-HOTP-Seed-Generator
+- **Authors:** Mu Ye, Sakura
