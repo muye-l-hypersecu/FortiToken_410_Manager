@@ -110,11 +110,11 @@
             // 
             Title.Anchor = AnchorStyles.None;
             Title.AutoSize = true;
-            Title.Font = new Font("Segoe UI", 42F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Title.ForeColor = Color.Red;
-            Title.Location = new Point(159, 5);
+            Title.Font = new Font("Arial", 42F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Title.ForeColor = Color.FromArgb(218, 41, 28);
+            Title.Location = new Point(161, 10);
             Title.Name = "Title";
-            Title.Size = new Size(674, 74);
+            Title.Size = new Size(669, 65);
             Title.TabIndex = 1;
             Title.Text = "FortiToken 410 Manager";
             Title.TextAlign = ContentAlignment.BottomCenter;
@@ -123,10 +123,10 @@
             // 
             label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold | FontStyle.Italic);
-            label1.Location = new Point(249, 90);
+            label1.Font = new Font("Arial", 9.75F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            label1.Location = new Point(266, 92);
             label1.Name = "label1";
-            label1.Size = new Size(494, 19);
+            label1.Size = new Size(460, 16);
             label1.TabIndex = 6;
             label1.Text = "Welcome to the FortiToken 410 Manager. Insert a FortiToken 410 key to start.";
             // 
@@ -134,11 +134,11 @@
             // 
             promptLabel.Anchor = AnchorStyles.None;
             promptLabel.AutoSize = true;
-            promptLabel.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Bold);
-            promptLabel.Location = new Point(499, 602);
+            promptLabel.Font = new Font("Arial", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            promptLabel.Location = new Point(499, 605);
             promptLabel.Margin = new Padding(3, 0, 3, 50);
             promptLabel.Name = "promptLabel";
-            promptLabel.Size = new Size(0, 30);
+            promptLabel.Size = new Size(0, 24);
             promptLabel.TabIndex = 8;
             promptLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
@@ -161,7 +161,7 @@
             // 
             BtnDisableHOTP.Anchor = AnchorStyles.Left;
             BtnDisableHOTP.Enabled = false;
-            BtnDisableHOTP.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            BtnDisableHOTP.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             BtnDisableHOTP.Location = new Point(516, 36);
             BtnDisableHOTP.Margin = new Padding(20, 3, 3, 3);
             BtnDisableHOTP.Name = "BtnDisableHOTP";
@@ -175,7 +175,7 @@
             // 
             BtnEnableHOTP.Anchor = AnchorStyles.Right;
             BtnEnableHOTP.Enabled = false;
-            BtnEnableHOTP.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            BtnEnableHOTP.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             BtnEnableHOTP.Location = new Point(286, 36);
             BtnEnableHOTP.Margin = new Padding(3, 3, 20, 3);
             BtnEnableHOTP.Name = "BtnEnableHOTP";
@@ -216,22 +216,22 @@
             // 
             keyStateLabel.Anchor = AnchorStyles.Top;
             keyStateLabel.AutoSize = true;
-            keyStateLabel.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            keyStateLabel.Font = new Font("Arial", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             keyStateLabel.Location = new Point(496, 68);
             keyStateLabel.Margin = new Padding(3);
             keyStateLabel.Name = "keyStateLabel";
-            keyStateLabel.Size = new Size(0, 30);
+            keyStateLabel.Size = new Size(0, 24);
             keyStateLabel.TabIndex = 10;
             // 
             // label2
             // 
             label2.Anchor = AnchorStyles.Bottom;
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(429, 30);
+            label2.Font = new Font("Arial", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(424, 33);
             label2.Margin = new Padding(3, 0, 3, 3);
             label2.Name = "label2";
-            label2.Size = new Size(134, 32);
+            label2.Size = new Size(143, 29);
             label2.TabIndex = 11;
             label2.Text = "Key Status:";
             // 

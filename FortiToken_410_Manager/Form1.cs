@@ -42,6 +42,7 @@ namespace FortiToken_410_Manager
 
             th.Start();
             CSCallbackFunc(1);
+            Form1.MainForm.keyStateLabel.Text = "FortiToken 410 not inserted.";
         }
 
         static void CallbackFunc()
@@ -54,7 +55,7 @@ namespace FortiToken_410_Manager
         {
             if (n == 0)
             {
-                Form1.MainForm.keyStateLabel.Text = "FortiToken 410 key not inserted.";
+                Form1.MainForm.keyStateLabel.Text = "FortiToken 410 not inserted.";
                 Form1.MainForm.pictureBox2.Visible = false;
                 Form1.MainForm.promptLabel.Text = string.Empty;
                 Form1.MainForm.BtnDisableHOTP.Enabled = false;
@@ -67,7 +68,7 @@ namespace FortiToken_410_Manager
                 ret = fidoU2F_find(vid); // searches USB
                 if (ret <= 0)
                 {
-                    Form1.MainForm.keyStateLabel.Text = "FortiToken 410 key not inserted.";
+                    Form1.MainForm.keyStateLabel.Text = "FortiToken 410 not recognized.";
                     Form1.MainForm.pictureBox2.Visible = false;
                     return;
                 }
