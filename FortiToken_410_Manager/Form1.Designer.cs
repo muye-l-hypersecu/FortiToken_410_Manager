@@ -123,10 +123,10 @@
             // 
             label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
-            label1.Font = new Font("Arial", 9.75F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            label1.Location = new Point(266, 92);
+            label1.Font = new Font("Arial", 12F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            label1.Location = new Point(219, 90);
             label1.Name = "label1";
-            label1.Size = new Size(460, 16);
+            label1.Size = new Size(553, 19);
             label1.TabIndex = 6;
             label1.Text = "Welcome to the FortiToken 410 Manager. Insert a FortiToken 410 key to start.";
             // 
