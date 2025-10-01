@@ -34,6 +34,7 @@
             tableLayoutPanel2 = new TableLayoutPanel();
             Title = new Label();
             label1 = new Label();
+            label3 = new Label();
             promptLabel = new Label();
             tableLayoutPanel3 = new TableLayoutPanel();
             BtnDisableHOTP = new Button();
@@ -54,10 +55,10 @@
             // pictureBox1
             // 
             pictureBox1.AllowDrop = true;
-            pictureBox1.Anchor = AnchorStyles.Top;
+            pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.InitialImage = null;
-            pictureBox1.Location = new Point(394, 7);
+            pictureBox1.Location = new Point(786, 7);
             pictureBox1.Margin = new Padding(3, 7, 3, 3);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(209, 29);
@@ -79,8 +80,8 @@
             tableLayoutPanel1.Location = new Point(5, 5);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 6;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 19.7674427F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 37.6947021F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 16.82243F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 40.4984436F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 42.6791267F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 111F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 133F));
@@ -96,14 +97,15 @@
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel2.Controls.Add(Title, 0, 0);
-            tableLayoutPanel2.Controls.Add(label1, 0, 1);
-            tableLayoutPanel2.Location = new Point(3, 66);
+            tableLayoutPanel2.Controls.Add(label1, 0, 2);
+            tableLayoutPanel2.Controls.Add(label3, 0, 1);
+            tableLayoutPanel2.Location = new Point(3, 57);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
-            tableLayoutPanel2.RowCount = 2;
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 73.91304F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 26.086956F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel2.Size = new Size(992, 115);
+            tableLayoutPanel2.RowCount = 3;
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 86.04651F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 13.9534883F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 37F));
+            tableLayoutPanel2.Size = new Size(992, 124);
             tableLayoutPanel2.TabIndex = 1;
             // 
             // Title
@@ -111,8 +113,8 @@
             Title.Anchor = AnchorStyles.None;
             Title.AutoSize = true;
             Title.Font = new Font("Arial", 42F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Title.ForeColor = Color.FromArgb(218, 41, 28);
-            Title.Location = new Point(161, 10);
+            Title.ForeColor = Color.Black;
+            Title.Location = new Point(161, 4);
             Title.Name = "Title";
             Title.Size = new Size(669, 65);
             Title.TabIndex = 1;
@@ -124,11 +126,22 @@
             label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
             label1.Font = new Font("Arial", 12F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            label1.Location = new Point(219, 90);
+            label1.Location = new Point(219, 95);
             label1.Name = "label1";
             label1.Size = new Size(553, 19);
             label1.TabIndex = 6;
             label1.Text = "Welcome to the FortiToken 410 Manager. Insert a FortiToken 410 key to start.";
+            // 
+            // label3
+            // 
+            label3.Anchor = AnchorStyles.Top;
+            label3.BackColor = Color.FromArgb(218, 41, 28);
+            label3.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.Transparent;
+            label3.Location = new Point(171, 74);
+            label3.Name = "label3";
+            label3.Size = new Size(650, 3);
+            label3.TabIndex = 7;
             // 
             // promptLabel
             // 
@@ -275,5 +288,6 @@
         private Label keyStateLabel;
         private TableLayoutPanel tableLayoutPanel4;
         private Label label2;
+        private Label label3;
     }
 }

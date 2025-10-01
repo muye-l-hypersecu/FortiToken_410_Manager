@@ -40,8 +40,6 @@ namespace FortiToken_410_Manager
                 }
             }
 
-            Form1.MainForm.keyStateLabel.Hide();
-
             th.Start();
             CSCallbackFunc(1);
         }
@@ -71,7 +69,7 @@ namespace FortiToken_410_Manager
 
                 if (ret <= 0) // nothing is inserted or the inserted token is not FIDO
                 {
-                    Form1.MainForm.keyStateLabel.Text = "FortiToken 410 not recognized.";
+                    Form1.MainForm.keyStateLabel.Text = "FortiToken 410 not inserted.";
                     Form1.MainForm.pictureBox2.Visible = false;
                     return;
                 }
