@@ -35,7 +35,8 @@
 - Run ```FortiToken_410_Manager.exe``` as **Administrator**.   
 - The file is found in:   
 ```\FortiToken_410_Manager\FortiToken_410_Manager\bin\x86\Release\net8.0-windows```
-- *Please ignore the other folders in the ```bin``` folder.
+
+*Please ignore the other folders in the ```bin``` folder.
 
 ## Credits:
 - **Reference:** VS2022-HyperFIDOPro-HOTP-Seed-Generator
