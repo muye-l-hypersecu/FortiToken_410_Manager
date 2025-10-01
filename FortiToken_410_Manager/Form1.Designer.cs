@@ -39,13 +39,16 @@
             BtnDisableHOTP = new Button();
             BtnEnableHOTP = new Button();
             pictureBox2 = new PictureBox();
-            keyStateLabel = new RichTextBox();
+            tableLayoutPanel4 = new TableLayoutPanel();
+            keyStateLabel = new Label();
+            label2 = new Label();
             pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            tableLayoutPanel4.SuspendLayout();
             SuspendLayout();
             // 
             // pictureBox1
@@ -72,7 +75,7 @@
             tableLayoutPanel1.Controls.Add(pictureBox1, 0, 0);
             tableLayoutPanel1.Controls.Add(tableLayoutPanel3, 0, 4);
             tableLayoutPanel1.Controls.Add(pictureBox2, 0, 3);
-            tableLayoutPanel1.Controls.Add(keyStateLabel, 0, 2);
+            tableLayoutPanel1.Controls.Add(tableLayoutPanel4, 0, 2);
             tableLayoutPanel1.Location = new Point(5, 5);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 6;
@@ -80,8 +83,8 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 37.6947021F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 42.6791267F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 111F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 114F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 172F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 133F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 153F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 210F));
             tableLayoutPanel1.Size = new Size(998, 719);
             tableLayoutPanel1.TabIndex = 0;
@@ -132,7 +135,8 @@
             promptLabel.Anchor = AnchorStyles.None;
             promptLabel.AutoSize = true;
             promptLabel.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Bold);
-            promptLabel.Location = new Point(499, 617);
+            promptLabel.Location = new Point(499, 602);
+            promptLabel.Margin = new Padding(3, 0, 3, 50);
             promptLabel.Name = "promptLabel";
             promptLabel.Size = new Size(0, 30);
             promptLabel.TabIndex = 8;
@@ -150,7 +154,7 @@
             tableLayoutPanel3.Name = "tableLayoutPanel3";
             tableLayoutPanel3.RowCount = 1;
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel3.Size = new Size(992, 108);
+            tableLayoutPanel3.Size = new Size(992, 127);
             tableLayoutPanel3.TabIndex = 5;
             // 
             // BtnDisableHOTP
@@ -158,7 +162,7 @@
             BtnDisableHOTP.Anchor = AnchorStyles.Left;
             BtnDisableHOTP.Enabled = false;
             BtnDisableHOTP.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            BtnDisableHOTP.Location = new Point(516, 26);
+            BtnDisableHOTP.Location = new Point(516, 36);
             BtnDisableHOTP.Margin = new Padding(20, 3, 3, 3);
             BtnDisableHOTP.Name = "BtnDisableHOTP";
             BtnDisableHOTP.Size = new Size(190, 55);
@@ -172,7 +176,7 @@
             BtnEnableHOTP.Anchor = AnchorStyles.Right;
             BtnEnableHOTP.Enabled = false;
             BtnEnableHOTP.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            BtnEnableHOTP.Location = new Point(286, 26);
+            BtnEnableHOTP.Location = new Point(286, 36);
             BtnEnableHOTP.Margin = new Padding(3, 3, 20, 3);
             BtnEnableHOTP.Name = "BtnEnableHOTP";
             BtnEnableHOTP.Size = new Size(190, 55);
@@ -192,18 +196,44 @@
             pictureBox2.TabStop = false;
             pictureBox2.Visible = false;
             // 
+            // tableLayoutPanel4
+            // 
+            tableLayoutPanel4.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            tableLayoutPanel4.ColumnCount = 1;
+            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel4.Controls.Add(keyStateLabel, 0, 1);
+            tableLayoutPanel4.Controls.Add(label2, 0, 0);
+            tableLayoutPanel4.Location = new Point(3, 187);
+            tableLayoutPanel4.Name = "tableLayoutPanel4";
+            tableLayoutPanel4.RowCount = 2;
+            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel4.Size = new Size(992, 131);
+            tableLayoutPanel4.TabIndex = 10;
+            // 
             // keyStateLabel
             // 
-            keyStateLabel.Anchor = AnchorStyles.None;
-            keyStateLabel.BorderStyle = BorderStyle.None;
+            keyStateLabel.Anchor = AnchorStyles.Top;
+            keyStateLabel.AutoSize = true;
             keyStateLabel.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            keyStateLabel.ForeColor = Color.Transparent;
-            keyStateLabel.Location = new Point(449, 204);
+            keyStateLabel.Location = new Point(496, 68);
+            keyStateLabel.Margin = new Padding(3);
             keyStateLabel.Name = "keyStateLabel";
-            keyStateLabel.Size = new Size(100, 96);
+            keyStateLabel.Size = new Size(0, 30);
             keyStateLabel.TabIndex = 10;
-            keyStateLabel.Text = "fdsf";
-            keyStateLabel.WordWrap = false;
+            // 
+            // label2
+            // 
+            label2.Anchor = AnchorStyles.Bottom;
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(429, 30);
+            label2.Margin = new Padding(3, 0, 3, 3);
+            label2.Name = "label2";
+            label2.Size = new Size(134, 32);
+            label2.TabIndex = 11;
+            label2.Text = "Key Status:";
             // 
             // Form1
             // 
@@ -225,6 +255,8 @@
             tableLayoutPanel2.PerformLayout();
             tableLayoutPanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            tableLayoutPanel4.ResumeLayout(false);
+            tableLayoutPanel4.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -240,6 +272,8 @@
         private TableLayoutPanel tableLayoutPanel2;
         private Label promptLabel;
         private PictureBox pictureBox2;
-        private RichTextBox keyStateLabel;
+        private Label keyStateLabel;
+        private TableLayoutPanel tableLayoutPanel4;
+        private Label label2;
     }
 }

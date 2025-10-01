@@ -28,7 +28,7 @@ namespace FortiToken_410_Manager
         {
             InitializeComponent();
             MainForm = this;
-            
+
             Thread th = new Thread(new ThreadStart(CallbackFunc));
             th.IsBackground = true;
             if (th == null)
@@ -83,7 +83,7 @@ namespace FortiToken_410_Manager
                 {
                     Form1.MainForm.keyStateLabel.Show();
                     Form1.MainForm.pictureBox2.Visible = true;
-                    Form1.MainForm.keyStateLabel.Text = "FortiToken 410 inserted: ";
+                    Form1.MainForm.keyStateLabel.Text = "FortiToken 410 inserted, ";
                     int p = fidoU2F_get_protocol();
 
                     switch (p)
@@ -192,7 +192,7 @@ namespace FortiToken_410_Manager
                     MsgBoxButtons = MessageBoxButtons.OK;
 
                     Form1.MainForm.promptLabel.Text = "Please unplug and reinsert the FortiToken 410 to re-disable HOTP.";
-                    Form1.MainForm.keyStateLabel.Text = "FortiToken 410 connected: FIDO and HOTP enabled.";
+                    Form1.MainForm.keyStateLabel.Text = "FortiToken 410 connected, FIDO and HOTP enabled.";
                     Form1.MainForm.BtnEnableHOTP.Enabled = false;
                     MsgBoxResult = MessageBox.Show(MsgBoxMessage, MsgBoxCaption, MsgBoxButtons, MessageBoxIcon.Information);
                 }
@@ -288,7 +288,7 @@ namespace FortiToken_410_Manager
                     MsgBoxCaption = "";
                     MsgBoxButtons = MessageBoxButtons.OK;
 
-                    Form1.MainForm.keyStateLabel.Text = "FortiToken 410 connected: Only FIDO enabled.";
+                    Form1.MainForm.keyStateLabel.Text = "FortiToken 410 connected, Only FIDO enabled.";
                     Form1.MainForm.BtnDisableHOTP.Enabled = false;
                     Form1.MainForm.promptLabel.Text = "Please unplug and reinsert the FortiToken 410 to re-enable HOTP.";
                     MsgBoxResult = MessageBox.Show(MsgBoxMessage, MsgBoxCaption, MsgBoxButtons, MessageBoxIcon.Information);
