@@ -1,5 +1,6 @@
 using Microsoft.VisualBasic;
 using System.Runtime.InteropServices;
+using System.Security.Principal;
 using Utility;
 using static Utility.HyperFIDO;
 
@@ -9,6 +10,7 @@ namespace FortiToken_410_Manager
     {
         public static Form1 MainForm = null;
         int DisplayAPDU = 1;
+        static bool isAdmin;
 
         // public defines
         string MsgBoxMessage = "";
@@ -28,6 +30,7 @@ namespace FortiToken_410_Manager
         {
             InitializeComponent();
             MainForm = this;
+            isAdmin = IsAdministrator();
 
             Thread th = new Thread(new ThreadStart(CallbackFunc));
             th.IsBackground = true;
@@ -44,6 +47,16 @@ namespace FortiToken_410_Manager
             CSCallbackFunc(1);
         }
 
+        // Checks whether or not the program is run as administrator
+        static bool IsAdministrator()
+        {
+            WindowsIdentity identity = WindowsIdentity.GetCurrent();
+            WindowsPrincipal principal = new WindowsPrincipal(identity);
+
+            return principal.IsInRole(WindowsBuiltInRole.Administrator);
+        }
+
+
         static void CallbackFunc()
         {
             callback = CSCallbackFunc;
@@ -56,10 +69,9 @@ namespace FortiToken_410_Manager
             Form1.MainForm.HOTPlabel.Text = "";
             if (n == 0) // nothing is inserted
             {
-                //Form1.MainForm.keyStateLabel.Show();
+                if (isAdmin) Form1.MainForm.StateLabel.Text = "";
                 Form1.MainForm.keyStateLabel.Text = "FortiToken 410 not inserted";
                 Form1.MainForm.pictureBox2.Visible = false;
-                //Form1.MainForm.promptLabel.Text = string.Empty;
                 Form1.MainForm.BtnDisableHOTP.Enabled = false;
                 Form1.MainForm.BtnEnableHOTP.Enabled = false;
                 fidoU2F_close();
@@ -85,7 +97,6 @@ namespace FortiToken_410_Manager
                 }
                 else
                 {
-                    //Form1.MainForm.keyStateLabel.Show();
                     Form1.MainForm.pictureBox2.Visible = true;
                     Form1.MainForm.keyStateLabel.Text = "FortiToken 410 inserted";
                     int p = fidoU2F_get_protocol();
@@ -94,10 +105,11 @@ namespace FortiToken_410_Manager
                     {
                         case 0:
                             // This case shouldn't occur, and if it does, then you are probably not running as administrator.
-                            Form1.MainForm.HOTPlabel.Text = "HOTP enabled";
+                            Form1.MainForm.StateLabel.Text = "ERROR: Please close and re-run program as Adminstrator.";
                             break;
                         case 1:
                             Form1.MainForm.FIDOlabel.Text = "FIDO enabled";
+                            Form1.MainForm.HOTPlabel.Text = "HOTP disabled";
                             Form1.MainForm.BtnEnableHOTP.Enabled = true;
                             break;
                         case 2:
@@ -191,11 +203,11 @@ namespace FortiToken_410_Manager
 
                 if ((recvBuf[0] == 0x90) && (recvBuf[1] == 0x00))
                 {
-                    MsgBoxMessage = "Enable HOTP successful.\r\n\r\nTo perform another action, remove and reinsert the FortiToken 410 key.";
+                    MsgBoxMessage = "Enable HOTP successful.\r\n\r\n";
                     MsgBoxCaption = "";
                     MsgBoxButtons = MessageBoxButtons.OK;
 
-                    //Form1.MainForm.promptLabel.Text = "Please unplug and reinsert the FortiToken 410 to re-disable HOTP.";
+                    Form1.MainForm.StateLabel.Text = "Please unplug and reinsert the FortiToken 410 to re-disable HOTP.";
                     Form1.MainForm.HOTPlabel.Text = "HOTP enabled";
                     Form1.MainForm.BtnEnableHOTP.Enabled = false;
                     MsgBoxResult = MessageBox.Show(MsgBoxMessage, MsgBoxCaption, MsgBoxButtons, MessageBoxIcon.Information);
@@ -288,12 +300,13 @@ namespace FortiToken_410_Manager
             {
                 if ((recvBuf[0] == 0x90) && (recvBuf[1] == 0x00))
                 {
-                    MsgBoxMessage = "Disable HOTP successful.\r\n\r\nTo perform another action, remove and reinsert the FortiToken 410 key.";
+                    MsgBoxMessage = "Disable HOTP successful.\r\n\r\n";
                     MsgBoxCaption = "";
                     MsgBoxButtons = MessageBoxButtons.OK;
 
-                    Form1.MainForm.HOTPlabel.Text = "";
+                    Form1.MainForm.HOTPlabel.Text = "HOTP disabled";
                     Form1.MainForm.BtnDisableHOTP.Enabled = false;
+                    Form1.MainForm.StateLabel.Text = "Please unplug and re-insert the FortiToken 410 to re-enable HOTP.";
                     //Form1.MainForm.promptLabel.Text = "Please unplug and reinsert the FortiToken 410 to re-enable HOTP.";
                     MsgBoxResult = MessageBox.Show(MsgBoxMessage, MsgBoxCaption, MsgBoxButtons, MessageBoxIcon.Information);
                     //BtnDisableHOTP.Enabled = false;
@@ -313,5 +326,6 @@ namespace FortiToken_410_Manager
 
 
         }
+
     }
 }
