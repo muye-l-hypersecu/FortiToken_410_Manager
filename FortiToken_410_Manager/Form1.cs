@@ -10,7 +10,6 @@ namespace FortiToken_410_Manager
     {
         public static Form1 MainForm = null;
         int DisplayAPDU = 1;
-        static bool isAdmin;
 
         // public defines
         string MsgBoxMessage = "";
@@ -30,7 +29,6 @@ namespace FortiToken_410_Manager
         {
             InitializeComponent();
             MainForm = this;
-            isAdmin = IsAdministrator();
 
             Thread th = new Thread(new ThreadStart(CallbackFunc));
             th.IsBackground = true;
@@ -47,15 +45,6 @@ namespace FortiToken_410_Manager
             CSCallbackFunc(1);
         }
 
-        // Checks whether or not the program is run as administrator
-        static bool IsAdministrator()
-        {
-            WindowsIdentity identity = WindowsIdentity.GetCurrent();
-            WindowsPrincipal principal = new WindowsPrincipal(identity);
-
-            return principal.IsInRole(WindowsBuiltInRole.Administrator);
-        }
-
 
         static void CallbackFunc()
         {
@@ -69,7 +58,7 @@ namespace FortiToken_410_Manager
             Form1.MainForm.HOTPlabel.Text = "";
             if (n == 0) // nothing is inserted
             {
-                if (isAdmin) Form1.MainForm.StateLabel.Text = "";
+                Form1.MainForm.StateLabel.Text = "";
                 Form1.MainForm.keyStateLabel.Text = "FortiToken 410 not inserted";
                 Form1.MainForm.pictureBox2.Visible = false;
                 Form1.MainForm.BtnDisableHOTP.Enabled = false;
@@ -105,7 +94,6 @@ namespace FortiToken_410_Manager
                     {
                         case 0:
                             // This case shouldn't occur, and if it does, then you are probably not running as administrator.
-                            Form1.MainForm.StateLabel.Text = "ERROR: Please close and re-run program as Adminstrator.";
                             break;
                         case 1:
                             Form1.MainForm.FIDOlabel.Text = "FIDO enabled";
