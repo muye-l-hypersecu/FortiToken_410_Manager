@@ -58,12 +58,13 @@
             pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.InitialImage = null;
-            pictureBox1.Location = new Point(804, 3);
+            pictureBox1.Location = new Point(810, 3);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(191, 30);
+            pictureBox1.Size = new Size(185, 48);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // tableLayoutPanel1
             // 
@@ -72,10 +73,10 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel1.Controls.Add(tableLayoutPanel2, 0, 1);
             tableLayoutPanel1.Controls.Add(promptLabel, 0, 5);
-            tableLayoutPanel1.Controls.Add(pictureBox1, 0, 0);
             tableLayoutPanel1.Controls.Add(tableLayoutPanel3, 0, 4);
             tableLayoutPanel1.Controls.Add(pictureBox2, 0, 3);
             tableLayoutPanel1.Controls.Add(tableLayoutPanel4, 0, 2);
+            tableLayoutPanel1.Controls.Add(pictureBox1, 0, 0);
             tableLayoutPanel1.Location = new Point(5, 5);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 6;

@@ -311,5 +311,10 @@ namespace FortiToken_410_Manager
 
 
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
