@@ -19,6 +19,11 @@
     <Title>FortiToken 410 Manager</Title>
     <Company>FortiToken 410 Manager</Company>
 	<AssemblyTitle>FortiToken 410 Manager</AssemblyTitle>
+
+	<ContinuousIntegrationBuild>false</ContinuousIntegrationBuild>
+	<DeterministicSourcePaths>false</DeterministicSourcePaths>
+	  <GenerateAssemblyInformationalVersionAttribute>false</GenerateAssemblyInformationalVersionAttribute>
+	  <EmbedUntrackedSources>false</EmbedUntrackedSources>
   </PropertyGroup>
 
 	<ItemGroup>
