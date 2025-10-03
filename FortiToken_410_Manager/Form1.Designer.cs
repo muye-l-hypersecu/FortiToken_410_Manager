@@ -41,7 +41,6 @@
             tableLayoutPanel4 = new TableLayoutPanel();
             keyStatus = new Label();
             keyStateLabel = new Label();
-            FIDOlabel = new Label();
             HOTPlabel = new Label();
             pictureBox2 = new PictureBox();
             StateLabel = new Label();
@@ -60,9 +59,10 @@
             pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.InitialImage = null;
-            pictureBox1.Location = new Point(733, 3);
+            pictureBox1.Location = new Point(745, 3);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(262, 59);
+            pictureBox1.Size = new Size(250, 36);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
             // 
@@ -73,17 +73,17 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel1.Controls.Add(tableLayoutPanel2, 0, 1);
             tableLayoutPanel1.Controls.Add(tableLayoutPanel3, 0, 4);
-            tableLayoutPanel1.Controls.Add(pictureBox1, 0, 0);
             tableLayoutPanel1.Controls.Add(tableLayoutPanel4, 0, 3);
             tableLayoutPanel1.Controls.Add(pictureBox2, 0, 2);
             tableLayoutPanel1.Controls.Add(StateLabel, 0, 5);
+            tableLayoutPanel1.Controls.Add(pictureBox1, 0, 0);
             tableLayoutPanel1.Location = new Point(5, 5);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 6;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 27.7027035F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 37.80488F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 34.4512177F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 131F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 120F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 73F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 186F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 210F));
@@ -99,13 +99,13 @@
             tableLayoutPanel2.Controls.Add(Title, 0, 0);
             tableLayoutPanel2.Controls.Add(label1, 0, 2);
             tableLayoutPanel2.Controls.Add(label3, 0, 1);
-            tableLayoutPanel2.Location = new Point(3, 94);
+            tableLayoutPanel2.Location = new Point(3, 97);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 3;
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 80F));
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 31F));
-            tableLayoutPanel2.Size = new Size(992, 118);
+            tableLayoutPanel2.Size = new Size(992, 122);
             tableLayoutPanel2.TabIndex = 1;
             // 
             // Title
@@ -114,7 +114,7 @@
             Title.AutoSize = true;
             Title.Font = new Font("Arial", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Title.ForeColor = Color.Black;
-            Title.Location = new Point(209, 6);
+            Title.Location = new Point(209, 8);
             Title.Name = "Title";
             Title.Size = new Size(574, 56);
             Title.TabIndex = 1;
@@ -126,7 +126,7 @@
             label1.Anchor = AnchorStyles.Top;
             label1.AutoSize = true;
             label1.Font = new Font("Arial", 12.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(206, 86);
+            label1.Location = new Point(206, 90);
             label1.Name = "label1";
             label1.Size = new Size(579, 19);
             label1.TabIndex = 6;
@@ -138,7 +138,7 @@
             label3.BackColor = Color.FromArgb(218, 41, 28);
             label3.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.Transparent;
-            label3.Location = new Point(216, 69);
+            label3.Location = new Point(216, 72);
             label3.Name = "label3";
             label3.Size = new Size(560, 3);
             label3.TabIndex = 7;
@@ -193,25 +193,25 @@
             tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel4.Controls.Add(keyStatus, 0, 0);
             tableLayoutPanel4.Controls.Add(keyStateLabel, 0, 1);
-            tableLayoutPanel4.Controls.Add(FIDOlabel, 0, 2);
-            tableLayoutPanel4.Controls.Add(HOTPlabel, 0, 3);
-            tableLayoutPanel4.Location = new Point(390, 331);
+            tableLayoutPanel4.Controls.Add(HOTPlabel, 0, 2);
+            tableLayoutPanel4.Location = new Point(390, 342);
             tableLayoutPanel4.Name = "tableLayoutPanel4";
             tableLayoutPanel4.RowCount = 4;
             tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Absolute, 26F));
             tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Absolute, 27F));
-            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
-            tableLayoutPanel4.Size = new Size(218, 125);
+            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Absolute, 28F));
+            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
+            tableLayoutPanel4.Size = new Size(218, 114);
             tableLayoutPanel4.TabIndex = 10;
             // 
             // keyStatus
             // 
+            keyStatus.AutoSize = true;
             keyStatus.Font = new Font("Arial", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             keyStatus.Location = new Point(3, 0);
             keyStatus.Margin = new Padding(3, 0, 0, 0);
             keyStatus.Name = "keyStatus";
-            keyStatus.Size = new Size(118, 26);
+            keyStatus.Size = new Size(117, 22);
             keyStatus.TabIndex = 11;
             keyStatus.Text = "Key Status:";
             // 
@@ -219,25 +219,16 @@
             // 
             keyStateLabel.AutoSize = true;
             keyStateLabel.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            keyStateLabel.Location = new Point(3, 32);
+            keyStateLabel.Location = new Point(3, 30);
             keyStateLabel.Name = "keyStateLabel";
             keyStateLabel.Size = new Size(0, 18);
             keyStateLabel.TabIndex = 12;
-            // 
-            // FIDOlabel
-            // 
-            FIDOlabel.AutoSize = true;
-            FIDOlabel.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            FIDOlabel.Location = new Point(3, 58);
-            FIDOlabel.Name = "FIDOlabel";
-            FIDOlabel.Size = new Size(0, 18);
-            FIDOlabel.TabIndex = 13;
             // 
             // HOTPlabel
             // 
             HOTPlabel.AutoSize = true;
             HOTPlabel.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            HOTPlabel.Location = new Point(3, 85);
+            HOTPlabel.Location = new Point(3, 57);
             HOTPlabel.Name = "HOTPlabel";
             HOTPlabel.Size = new Size(0, 18);
             HOTPlabel.TabIndex = 14;
@@ -246,7 +237,7 @@
             // 
             pictureBox2.Anchor = AnchorStyles.None;
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(399, 240);
+            pictureBox2.Location = new Point(399, 249);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(199, 62);
             pictureBox2.TabIndex = 9;
@@ -304,7 +295,6 @@
         private Label keyStatus;
         private Label label3;
         private Label keyStateLabel;
-        private Label FIDOlabel;
         private Label HOTPlabel;
         private Label StateLabel;
     }

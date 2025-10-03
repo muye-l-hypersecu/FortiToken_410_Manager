@@ -54,7 +54,6 @@ namespace FortiToken_410_Manager
 
         static void CSCallbackFunc(int n)
         {
-            Form1.MainForm.FIDOlabel.Text = "";
             Form1.MainForm.HOTPlabel.Text = "";
             if (n == 0) // nothing is inserted
             {
@@ -96,12 +95,10 @@ namespace FortiToken_410_Manager
                             // This case shouldn't occur, and if it does, then you are probably not running as administrator.
                             break;
                         case 1:
-                            Form1.MainForm.FIDOlabel.Text = "FIDO enabled";
                             Form1.MainForm.HOTPlabel.Text = "HOTP disabled";
                             Form1.MainForm.BtnEnableHOTP.Enabled = true;
                             break;
                         case 2:
-                            Form1.MainForm.FIDOlabel.Text = "FIDO enabled";
                             Form1.MainForm.HOTPlabel.Text = "HOTP enabled";
                             Form1.MainForm.BtnDisableHOTP.Enabled = true;
                             break;

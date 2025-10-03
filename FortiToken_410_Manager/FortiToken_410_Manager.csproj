@@ -7,9 +7,11 @@
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
     <Platforms>AnyCPU;x86</Platforms>
+    <ApplicationIcon>fortinet_icon.ico</ApplicationIcon>
   </PropertyGroup>
 
 	<ItemGroup>
+		<Content Include="fortinet_icon.ico" />
 		<Content Include="Utility/HyperFIDO.dll">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 			<Link>%(Filename)%(Extension)</Link>
