@@ -34,7 +34,6 @@
             tableLayoutPanel2 = new TableLayoutPanel();
             Title = new Label();
             label1 = new Label();
-            label3 = new Label();
             tableLayoutPanel3 = new TableLayoutPanel();
             BtnDisableHOTP = new Button();
             BtnEnableHOTP = new Button();
@@ -59,9 +58,9 @@
             pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.InitialImage = null;
-            pictureBox1.Location = new Point(745, 3);
+            pictureBox1.Location = new Point(639, 3);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(250, 36);
+            pictureBox1.Size = new Size(356, 36);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
@@ -80,12 +79,12 @@
             tableLayoutPanel1.Location = new Point(5, 5);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 6;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 27.7027035F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 37.80488F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 25.6F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 40F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 34.4512177F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 120F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 141F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 73F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 186F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 158F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 210F));
             tableLayoutPanel1.Size = new Size(998, 719);
             tableLayoutPanel1.TabIndex = 0;
@@ -94,29 +93,27 @@
             // 
             tableLayoutPanel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tableLayoutPanel2.ColumnCount = 1;
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel2.Controls.Add(Title, 0, 0);
-            tableLayoutPanel2.Controls.Add(label1, 0, 2);
-            tableLayoutPanel2.Controls.Add(label3, 0, 1);
-            tableLayoutPanel2.Location = new Point(3, 97);
+            tableLayoutPanel2.Controls.Add(label1, 0, 1);
+            tableLayoutPanel2.Location = new Point(3, 91);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
-            tableLayoutPanel2.RowCount = 3;
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 80F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 31F));
-            tableLayoutPanel2.Size = new Size(992, 122);
+            tableLayoutPanel2.RowCount = 2;
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 63F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel2.Size = new Size(992, 132);
             tableLayoutPanel2.TabIndex = 1;
             // 
             // Title
             // 
             Title.Anchor = AnchorStyles.None;
             Title.AutoSize = true;
-            Title.Font = new Font("Arial", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Title.Font = new Font("Arial", 30F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Title.ForeColor = Color.Black;
-            Title.Location = new Point(209, 8);
+            Title.Location = new Point(261, 11);
             Title.Name = "Title";
-            Title.Size = new Size(574, 56);
+            Title.Size = new Size(470, 46);
             Title.TabIndex = 1;
             Title.Text = "FortiToken 410 Manager";
             Title.TextAlign = ContentAlignment.BottomCenter;
@@ -126,22 +123,12 @@
             label1.Anchor = AnchorStyles.Top;
             label1.AutoSize = true;
             label1.Font = new Font("Arial", 12.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(206, 90);
+            label1.Location = new Point(358, 69);
             label1.Name = "label1";
-            label1.Size = new Size(579, 19);
+            label1.Size = new Size(275, 19);
             label1.TabIndex = 6;
-            label1.Text = "Welcome to the FortiToken 410 Manager. Insert a FortiToken 410 key to begin.";
-            // 
-            // label3
-            // 
-            label3.Anchor = AnchorStyles.Top;
-            label3.BackColor = Color.FromArgb(218, 41, 28);
-            label3.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.Transparent;
-            label3.Location = new Point(216, 72);
-            label3.Name = "label3";
-            label3.Size = new Size(560, 3);
-            label3.TabIndex = 7;
+            label1.Text = "Insert a FortiToken 410 key to begin.";
+            label1.Click += label1_Click;
             // 
             // tableLayoutPanel3
             // 
@@ -151,7 +138,7 @@
             tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel3.Controls.Add(BtnDisableHOTP, 1, 0);
             tableLayoutPanel3.Controls.Add(BtnEnableHOTP, 0, 0);
-            tableLayoutPanel3.Location = new Point(3, 462);
+            tableLayoutPanel3.Location = new Point(3, 489);
             tableLayoutPanel3.Name = "tableLayoutPanel3";
             tableLayoutPanel3.RowCount = 1;
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
@@ -160,10 +147,9 @@
             // 
             // BtnDisableHOTP
             // 
-            BtnDisableHOTP.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             BtnDisableHOTP.Enabled = false;
             BtnDisableHOTP.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            BtnDisableHOTP.Location = new Point(516, 9);
+            BtnDisableHOTP.Location = new Point(516, 3);
             BtnDisableHOTP.Margin = new Padding(20, 3, 3, 3);
             BtnDisableHOTP.Name = "BtnDisableHOTP";
             BtnDisableHOTP.Size = new Size(190, 55);
@@ -174,10 +160,10 @@
             // 
             // BtnEnableHOTP
             // 
-            BtnEnableHOTP.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            BtnEnableHOTP.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             BtnEnableHOTP.Enabled = false;
             BtnEnableHOTP.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            BtnEnableHOTP.Location = new Point(286, 9);
+            BtnEnableHOTP.Location = new Point(286, 3);
             BtnEnableHOTP.Margin = new Padding(3, 3, 20, 3);
             BtnEnableHOTP.Name = "BtnEnableHOTP";
             BtnEnableHOTP.Size = new Size(190, 55);
@@ -194,14 +180,14 @@
             tableLayoutPanel4.Controls.Add(keyStatus, 0, 0);
             tableLayoutPanel4.Controls.Add(keyStateLabel, 0, 1);
             tableLayoutPanel4.Controls.Add(HOTPlabel, 0, 2);
-            tableLayoutPanel4.Location = new Point(390, 342);
+            tableLayoutPanel4.Location = new Point(390, 348);
             tableLayoutPanel4.Name = "tableLayoutPanel4";
             tableLayoutPanel4.RowCount = 4;
             tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Absolute, 27F));
-            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Absolute, 28F));
-            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
-            tableLayoutPanel4.Size = new Size(218, 114);
+            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
+            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Absolute, 32F));
+            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Absolute, 32F));
+            tableLayoutPanel4.Size = new Size(218, 135);
             tableLayoutPanel4.TabIndex = 10;
             // 
             // keyStatus
@@ -219,7 +205,7 @@
             // 
             keyStateLabel.AutoSize = true;
             keyStateLabel.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            keyStateLabel.Location = new Point(3, 30);
+            keyStateLabel.Location = new Point(3, 41);
             keyStateLabel.Name = "keyStateLabel";
             keyStateLabel.Size = new Size(0, 18);
             keyStateLabel.TabIndex = 12;
@@ -228,7 +214,7 @@
             // 
             HOTPlabel.AutoSize = true;
             HOTPlabel.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            HOTPlabel.Location = new Point(3, 57);
+            HOTPlabel.Location = new Point(3, 71);
             HOTPlabel.Name = "HOTPlabel";
             HOTPlabel.Size = new Size(0, 18);
             HOTPlabel.TabIndex = 14;
@@ -237,7 +223,8 @@
             // 
             pictureBox2.Anchor = AnchorStyles.None;
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(399, 249);
+            pictureBox2.Location = new Point(399, 236);
+            pictureBox2.Margin = new Padding(3, 3, 3, 40);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(199, 62);
             pictureBox2.TabIndex = 9;
@@ -249,7 +236,7 @@
             StateLabel.Anchor = AnchorStyles.None;
             StateLabel.AutoSize = true;
             StateLabel.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            StateLabel.Location = new Point(499, 593);
+            StateLabel.Location = new Point(499, 606);
             StateLabel.Margin = new Padding(3, 0, 3, 40);
             StateLabel.Name = "StateLabel";
             StateLabel.Size = new Size(0, 25);
@@ -257,7 +244,8 @@
             // 
             // Form1
             // 
-            AutoScaleMode = AutoScaleMode.None;
+            AutoScaleDimensions = new SizeF(96F, 96F);
+            AutoScaleMode = AutoScaleMode.Dpi;
             ClientSize = new Size(1008, 729);
             Controls.Add(tableLayoutPanel1);
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -292,7 +280,6 @@
         private PictureBox pictureBox2;
         private TableLayoutPanel tableLayoutPanel4;
         private Label keyStatus;
-        private Label label3;
         private Label keyStateLabel;
         private Label HOTPlabel;
         private Label StateLabel;
