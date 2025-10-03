@@ -57,7 +57,6 @@ namespace FortiToken_410_Manager
             Form1.MainForm.HOTPlabel.Text = "";
             if (n == 0) // nothing is inserted
             {
-                Form1.MainForm.StateLabel.Text = "";
                 Form1.MainForm.keyStateLabel.Text = "FortiToken 410 not inserted";
                 Form1.MainForm.pictureBox2.Visible = false;
                 Form1.MainForm.BtnDisableHOTP.Enabled = false;
@@ -192,7 +191,6 @@ namespace FortiToken_410_Manager
                     MsgBoxCaption = "";
                     MsgBoxButtons = MessageBoxButtons.OK;
 
-                    Form1.MainForm.StateLabel.Text = "Remove and reinsert the FortiToken 410 key to re-disable HOTP.";
                     Form1.MainForm.HOTPlabel.Text = "HOTP enabled";
                     Form1.MainForm.BtnEnableHOTP.Enabled = false;
                     MsgBoxResult = MessageBox.Show(MsgBoxMessage, MsgBoxCaption, MsgBoxButtons, MessageBoxIcon.Information);
@@ -291,7 +289,6 @@ namespace FortiToken_410_Manager
 
                     Form1.MainForm.HOTPlabel.Text = "HOTP disabled";
                     Form1.MainForm.BtnDisableHOTP.Enabled = false;
-                    Form1.MainForm.StateLabel.Text = "Remove and reinsert the FortiToken 410 key to re-enable HOTP.";
                     //Form1.MainForm.promptLabel.Text = "Please unplug and reinsert the FortiToken 410 to re-enable HOTP.";
                     MsgBoxResult = MessageBox.Show(MsgBoxMessage, MsgBoxCaption, MsgBoxButtons, MessageBoxIcon.Information);
                     //BtnDisableHOTP.Enabled = false;
