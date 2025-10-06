@@ -54,6 +54,9 @@ namespace FortiToken_410_Manager
         {
             if (n == 0) // nothing is inserted
             {
+                Form1.MainForm.InsertHOTPLabel.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                Form1.MainForm.InsertHOTPLabel.Anchor = AnchorStyles.None;
+
                 Form1.MainForm.KeyStateLabel.Text = "FortiToken 410 not found.";
                 Form1.MainForm.InsertHOTPLabel.Text = "Insert an FortiToken 410 to begin.";
                 Form1.MainForm.TokenImage.Visible = false;
@@ -68,6 +71,10 @@ namespace FortiToken_410_Manager
 
                 if (ret <= 0) // nothing is inserted or the inserted token is not FIDO
                 {
+                    Form1.MainForm.InsertHOTPLabel.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                    Form1.MainForm.InsertHOTPLabel.Anchor = AnchorStyles.None;
+
+                    Form1.MainForm.InsertHOTPLabel.Text = "Insert a FortiToken 410 to begin.";
                     Form1.MainForm.KeyStateLabel.Text = "FortiToken 410 not found.";
                     Form1.MainForm.TokenImage.Visible = false;
                     return;
@@ -92,11 +99,18 @@ namespace FortiToken_410_Manager
                             // This case shouldn't occur, and if it does, then you are probably not running as administrator.
                             break;
                         case 1:
-                            Form1.MainForm.InsertHOTPLabel.Text = "HOTP disabled";
+                            // Token is currently disabled
+                            Form1.MainForm.InsertHOTPLabel.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                            Form1.MainForm.InsertHOTPLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Right)));
+
+                            Form1.MainForm.InsertHOTPLabel.Text = "HOTP Status: ";
                             Form1.MainForm.BtnEnableHOTP.Enabled = true;
                             break;
                         case 2:
-                            Form1.MainForm.InsertHOTPLabel.Text = "HOTP enabled";
+                            // Token is currently enabled
+                            Form1.MainForm.InsertHOTPLabel.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                            Form1.MainForm.InsertHOTPLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Right)));
+                            Form1.MainForm.InsertHOTPLabel.Text = "HOTP Status: ";
                             Form1.MainForm.BtnDisableHOTP.Enabled = true;
                             break;
                         default:
@@ -189,7 +203,6 @@ namespace FortiToken_410_Manager
                     MsgBoxCaption = "";
                     MsgBoxButtons = MessageBoxButtons.OK;
 
-                    Form1.MainForm.InsertHOTPLabel.Text = "HOTP enabled";
                     Form1.MainForm.BtnEnableHOTP.Enabled = false;
                     MsgBoxResult = MessageBox.Show(MsgBoxMessage, MsgBoxCaption, MsgBoxButtons, MessageBoxIcon.Information);
                 }
@@ -285,7 +298,6 @@ namespace FortiToken_410_Manager
                     MsgBoxCaption = "";
                     MsgBoxButtons = MessageBoxButtons.OK;
 
-                    Form1.MainForm.InsertHOTPLabel.Text = "HOTP disabled";
                     Form1.MainForm.BtnDisableHOTP.Enabled = false;
                     //Form1.MainForm.promptLabel.Text = "Please unplug and reinsert the FortiToken 410 to re-enable HOTP.";
                     MsgBoxResult = MessageBox.Show(MsgBoxMessage, MsgBoxCaption, MsgBoxButtons, MessageBoxIcon.Information);
@@ -305,6 +317,26 @@ namespace FortiToken_410_Manager
             HyperFIDO.fidoU2F_close();
 
 
+        }
+
+        /// <summary>
+        /// Modifies the insert hotp status message that stores the hotp status messages.
+        /// Insert: 
+        /// - 0 for default configuration
+        /// - 1 for enabled configuration
+        /// - 2 for disabled configuration
+        /// </summary>
+        void ModifyInsert(int op)
+        {
+            switch (op)
+            {
+                case 0:
+                    break;
+                case 1:
+                    break;
+                case 2:
+                    break;
+            }
         }
     }
 }

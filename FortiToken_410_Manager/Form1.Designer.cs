@@ -117,7 +117,7 @@
             this.BtnDisableHOTP.TabIndex = 1;
             this.BtnDisableHOTP.Text = "Disable HOTP";
             this.BtnDisableHOTP.UseVisualStyleBackColor = true;
-            this.BtnDisableHOTP.Click += new EventHandler(this.BtnDisableHOTP_Click);
+            this.BtnDisableHOTP.Click += new System.EventHandler(this.BtnDisableHOTP_Click);
             // 
             // BtnEnableHOTP
             // 
@@ -130,7 +130,7 @@
             this.BtnEnableHOTP.TabIndex = 0;
             this.BtnEnableHOTP.Text = "Re-Enable HOTP";
             this.BtnEnableHOTP.UseVisualStyleBackColor = true;
-            this.BtnEnableHOTP.Click += new EventHandler(this.BtnEnableHOTP_Click);
+            this.BtnEnableHOTP.Click += new System.EventHandler(this.BtnEnableHOTP_Click);
             // 
             // Title
             // 
@@ -199,11 +199,10 @@
             this.InsertHOTPLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.InsertHOTPLabel.AutoSize = true;
             this.InsertHOTPLabel.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InsertHOTPLabel.Location = new System.Drawing.Point(274, 4);
+            this.InsertHOTPLabel.Location = new System.Drawing.Point(381, 4);
             this.InsertHOTPLabel.Name = "InsertHOTPLabel";
-            this.InsertHOTPLabel.Size = new System.Drawing.Size(214, 17);
+            this.InsertHOTPLabel.Size = new System.Drawing.Size(0, 17);
             this.InsertHOTPLabel.TabIndex = 6;
-            this.InsertHOTPLabel.Text = "Insert a FortiToken 410 to begin.";
             this.InsertHOTPLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // HOTPStatusLabel
