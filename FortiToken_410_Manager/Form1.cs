@@ -68,7 +68,7 @@ namespace FortiToken_410_Manager
 
                 if (ret <= 0) // nothing is inserted or the inserted token is not FIDO
                 {
-                    Form1.MainForm.KeyStateLabel.Text = "FortiToken 410 not found";
+                    Form1.MainForm.KeyStateLabel.Text = "FortiToken 410 not found.";
                     Form1.MainForm.TokenImage.Visible = false;
                     return;
                 }
