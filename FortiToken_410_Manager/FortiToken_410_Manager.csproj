@@ -26,6 +26,7 @@
 	<DeterministicSourcePaths>false</DeterministicSourcePaths>
 	  <GenerateAssemblyInformationalVersionAttribute>false</GenerateAssemblyInformationalVersionAttribute>
 	  <EmbedUntrackedSources>false</EmbedUntrackedSources>
+	  <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
 
 	<ItemGroup>
