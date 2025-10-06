@@ -28,244 +28,253 @@
         /// </summary>
         private void InitializeComponent()
         {
-            PictureBox pictureBox1;
+            System.Windows.Forms.PictureBox LogoImage;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            tableLayoutPanel1 = new TableLayoutPanel();
-            tableLayoutPanel2 = new TableLayoutPanel();
-            Title = new Label();
-            label1 = new Label();
-            tableLayoutPanel3 = new TableLayoutPanel();
-            BtnDisableHOTP = new Button();
-            BtnEnableHOTP = new Button();
-            tableLayoutPanel4 = new TableLayoutPanel();
-            keyStatus = new Label();
-            keyStateLabel = new Label();
-            HOTPlabel = new Label();
-            pictureBox2 = new PictureBox();
-            pictureBox1 = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            tableLayoutPanel1.SuspendLayout();
-            tableLayoutPanel2.SuspendLayout();
-            tableLayoutPanel3.SuspendLayout();
-            tableLayoutPanel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            SuspendLayout();
+            this.MainTable = new System.Windows.Forms.TableLayoutPanel();
+            this.ButtonTable = new System.Windows.Forms.TableLayoutPanel();
+            this.BtnDisableHOTP = new System.Windows.Forms.Button();
+            this.BtnEnableHOTP = new System.Windows.Forms.Button();
+            this.Title = new System.Windows.Forms.Label();
+            this.TokenImage = new System.Windows.Forms.PictureBox();
+            this.OutputTable = new System.Windows.Forms.TableLayoutPanel();
+            this.InsertHOTPStatusTable = new System.Windows.Forms.TableLayoutPanel();
+            this.InsertHOTPLabel = new System.Windows.Forms.Label();
+            this.HOTPStatusLabel = new System.Windows.Forms.Label();
+            this.KeyStateLabel = new System.Windows.Forms.Label();
+            this.PromptLabel = new System.Windows.Forms.Label();
+            LogoImage = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(LogoImage)).BeginInit();
+            this.MainTable.SuspendLayout();
+            this.ButtonTable.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TokenImage)).BeginInit();
+            this.OutputTable.SuspendLayout();
+            this.InsertHOTPStatusTable.SuspendLayout();
+            this.SuspendLayout();
             // 
-            // pictureBox1
+            // LogoImage
             // 
-            pictureBox1.AllowDrop = true;
-            pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.InitialImage = null;
-            pictureBox1.Location = new Point(639, 3);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(356, 36);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 1;
-            pictureBox1.TabStop = false;
+            LogoImage.AllowDrop = true;
+            LogoImage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            LogoImage.Image = ((System.Drawing.Image)(resources.GetObject("LogoImage.Image")));
+            LogoImage.InitialImage = null;
+            LogoImage.Location = new System.Drawing.Point(574, 20);
+            LogoImage.Margin = new System.Windows.Forms.Padding(3, 20, 30, 3);
+            LogoImage.Name = "LogoImage";
+            LogoImage.Size = new System.Drawing.Size(170, 26);
+            LogoImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            LogoImage.TabIndex = 1;
+            LogoImage.TabStop = false;
             // 
-            // tableLayoutPanel1
+            // MainTable
             // 
-            tableLayoutPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            tableLayoutPanel1.ColumnCount = 1;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.Controls.Add(tableLayoutPanel2, 0, 1);
-            tableLayoutPanel1.Controls.Add(tableLayoutPanel3, 0, 4);
-            tableLayoutPanel1.Controls.Add(tableLayoutPanel4, 0, 3);
-            tableLayoutPanel1.Controls.Add(pictureBox2, 0, 2);
-            tableLayoutPanel1.Controls.Add(pictureBox1, 0, 0);
-            tableLayoutPanel1.Location = new Point(5, 5);
-            tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 5;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 25.586895F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 38.42105F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 36.05263F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 162F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 157F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.Size = new Size(998, 719);
-            tableLayoutPanel1.TabIndex = 0;
+            this.MainTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.MainTable.ColumnCount = 1;
+            this.MainTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.MainTable.Controls.Add(this.ButtonTable, 0, 4);
+            this.MainTable.Controls.Add(this.Title, 0, 1);
+            this.MainTable.Controls.Add(LogoImage, 0, 0);
+            this.MainTable.Controls.Add(this.TokenImage, 0, 2);
+            this.MainTable.Controls.Add(this.OutputTable, 0, 3);
+            this.MainTable.Location = new System.Drawing.Point(5, 5);
+            this.MainTable.Name = "MainTable";
+            this.MainTable.RowCount = 5;
+            this.MainTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12F));
+            this.MainTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13F));
+            this.MainTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.MainTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.MainTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.MainTable.Size = new System.Drawing.Size(774, 451);
+            this.MainTable.TabIndex = 0;
             // 
-            // tableLayoutPanel2
+            // ButtonTable
             // 
-            tableLayoutPanel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            tableLayoutPanel2.ColumnCount = 1;
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel2.Controls.Add(Title, 0, 0);
-            tableLayoutPanel2.Controls.Add(label1, 0, 1);
-            tableLayoutPanel2.Location = new Point(3, 105);
-            tableLayoutPanel2.Name = "tableLayoutPanel2";
-            tableLayoutPanel2.RowCount = 2;
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 63F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel2.Size = new Size(992, 147);
-            tableLayoutPanel2.TabIndex = 1;
-            // 
-            // Title
-            // 
-            Title.Anchor = AnchorStyles.None;
-            Title.AutoSize = true;
-            Title.Font = new Font("Arial", 30F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Title.ForeColor = Color.Black;
-            Title.Location = new Point(261, 19);
-            Title.Name = "Title";
-            Title.Size = new Size(470, 46);
-            Title.TabIndex = 1;
-            Title.Text = "FortiToken 410 Manager";
-            Title.TextAlign = ContentAlignment.BottomCenter;
-            // 
-            // label1
-            // 
-            label1.Anchor = AnchorStyles.Top;
-            label1.AutoSize = true;
-            label1.Font = new Font("Arial", 12.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(358, 84);
-            label1.Name = "label1";
-            label1.Size = new Size(275, 19);
-            label1.TabIndex = 6;
-            label1.Text = "Insert a FortiToken 410 key to begin.";
-            label1.Click += label1_Click;
-            // 
-            // tableLayoutPanel3
-            // 
-            tableLayoutPanel3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            tableLayoutPanel3.ColumnCount = 2;
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel3.Controls.Add(BtnDisableHOTP, 1, 0);
-            tableLayoutPanel3.Controls.Add(BtnEnableHOTP, 0, 0);
-            tableLayoutPanel3.Location = new Point(3, 564);
-            tableLayoutPanel3.Name = "tableLayoutPanel3";
-            tableLayoutPanel3.RowCount = 1;
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel3.Size = new Size(992, 152);
-            tableLayoutPanel3.TabIndex = 5;
+            this.ButtonTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ButtonTable.ColumnCount = 2;
+            this.ButtonTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.ButtonTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.ButtonTable.Controls.Add(this.BtnDisableHOTP, 0, 0);
+            this.ButtonTable.Controls.Add(this.BtnEnableHOTP, 1, 0);
+            this.ButtonTable.Location = new System.Drawing.Point(3, 340);
+            this.ButtonTable.Name = "ButtonTable";
+            this.ButtonTable.RowCount = 1;
+            this.ButtonTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.ButtonTable.Size = new System.Drawing.Size(768, 108);
+            this.ButtonTable.TabIndex = 5;
             // 
             // BtnDisableHOTP
             // 
-            BtnDisableHOTP.Enabled = false;
-            BtnDisableHOTP.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            BtnDisableHOTP.Location = new Point(516, 3);
-            BtnDisableHOTP.Margin = new Padding(20, 3, 3, 3);
-            BtnDisableHOTP.Name = "BtnDisableHOTP";
-            BtnDisableHOTP.Size = new Size(190, 55);
-            BtnDisableHOTP.TabIndex = 1;
-            BtnDisableHOTP.Text = "Disable HOTP";
-            BtnDisableHOTP.UseVisualStyleBackColor = true;
-            BtnDisableHOTP.Click += BtnDisableHOTP_Click;
+            this.BtnDisableHOTP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnDisableHOTP.Enabled = false;
+            this.BtnDisableHOTP.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnDisableHOTP.Location = new System.Drawing.Point(134, 15);
+            this.BtnDisableHOTP.Margin = new System.Windows.Forms.Padding(3, 15, 50, 3);
+            this.BtnDisableHOTP.Name = "BtnDisableHOTP";
+            this.BtnDisableHOTP.Size = new System.Drawing.Size(200, 50);
+            this.BtnDisableHOTP.TabIndex = 1;
+            this.BtnDisableHOTP.Text = "Disable HOTP";
+            this.BtnDisableHOTP.UseVisualStyleBackColor = true;
             // 
             // BtnEnableHOTP
             // 
-            BtnEnableHOTP.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            BtnEnableHOTP.Enabled = false;
-            BtnEnableHOTP.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            BtnEnableHOTP.Location = new Point(286, 3);
-            BtnEnableHOTP.Margin = new Padding(3, 3, 20, 3);
-            BtnEnableHOTP.Name = "BtnEnableHOTP";
-            BtnEnableHOTP.Size = new Size(190, 55);
-            BtnEnableHOTP.TabIndex = 0;
-            BtnEnableHOTP.Text = "Enable HOTP";
-            BtnEnableHOTP.UseVisualStyleBackColor = true;
-            BtnEnableHOTP.Click += BtnEnableHOTP_Click;
+            this.BtnEnableHOTP.Enabled = false;
+            this.BtnEnableHOTP.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnEnableHOTP.Location = new System.Drawing.Point(434, 15);
+            this.BtnEnableHOTP.Margin = new System.Windows.Forms.Padding(50, 15, 3, 3);
+            this.BtnEnableHOTP.Name = "BtnEnableHOTP";
+            this.BtnEnableHOTP.Size = new System.Drawing.Size(200, 50);
+            this.BtnEnableHOTP.TabIndex = 0;
+            this.BtnEnableHOTP.Text = "Re-Enable HOTP";
+            this.BtnEnableHOTP.UseVisualStyleBackColor = true;
             // 
-            // tableLayoutPanel4
+            // Title
             // 
-            tableLayoutPanel4.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            tableLayoutPanel4.ColumnCount = 1;
-            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel4.Controls.Add(keyStatus, 0, 0);
-            tableLayoutPanel4.Controls.Add(keyStateLabel, 0, 1);
-            tableLayoutPanel4.Controls.Add(HOTPlabel, 0, 2);
-            tableLayoutPanel4.Location = new Point(390, 402);
-            tableLayoutPanel4.Name = "tableLayoutPanel4";
-            tableLayoutPanel4.RowCount = 3;
-            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Absolute, 31F));
-            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Absolute, 86F));
-            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel4.Size = new Size(218, 156);
-            tableLayoutPanel4.TabIndex = 10;
+            this.Title.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Title.AutoSize = true;
+            this.Title.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Title.ForeColor = System.Drawing.Color.Black;
+            this.Title.Location = new System.Drawing.Point(223, 68);
+            this.Title.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
+            this.Title.Name = "Title";
+            this.Title.Size = new System.Drawing.Size(328, 32);
+            this.Title.TabIndex = 1;
+            this.Title.Text = "FortiToken 410 Manager";
+            this.Title.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
-            // keyStatus
+            // TokenImage
             // 
-            keyStatus.AutoSize = true;
-            keyStatus.Font = new Font("Arial", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            keyStatus.Location = new Point(3, 0);
-            keyStatus.Margin = new Padding(3, 0, 0, 0);
-            keyStatus.Name = "keyStatus";
-            keyStatus.Size = new Size(117, 22);
-            keyStatus.TabIndex = 11;
-            keyStatus.Text = "Key Status:";
+            this.TokenImage.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.TokenImage.Image = ((System.Drawing.Image)(resources.GetObject("TokenImage.Image")));
+            this.TokenImage.Location = new System.Drawing.Point(290, 128);
+            this.TokenImage.Name = "TokenImage";
+            this.TokenImage.Size = new System.Drawing.Size(194, 58);
+            this.TokenImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.TokenImage.TabIndex = 9;
+            this.TokenImage.TabStop = false;
+            this.TokenImage.Visible = false;
             // 
-            // keyStateLabel
+            // OutputTable
             // 
-            keyStateLabel.AutoSize = true;
-            keyStateLabel.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            keyStateLabel.Location = new Point(3, 39);
-            keyStateLabel.Name = "keyStateLabel";
-            keyStateLabel.Size = new Size(0, 18);
-            keyStateLabel.TabIndex = 12;
+            this.OutputTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.OutputTable.ColumnCount = 1;
+            this.OutputTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.OutputTable.Controls.Add(this.InsertHOTPStatusTable, 0, 1);
+            this.OutputTable.Controls.Add(this.KeyStateLabel, 0, 0);
+            this.OutputTable.Controls.Add(this.PromptLabel, 0, 2);
+            this.OutputTable.Location = new System.Drawing.Point(3, 205);
+            this.OutputTable.Name = "OutputTable";
+            this.OutputTable.RowCount = 3;
+            this.OutputTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.OutputTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.OutputTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45F));
+            this.OutputTable.Size = new System.Drawing.Size(768, 129);
+            this.OutputTable.TabIndex = 10;
             // 
-            // HOTPlabel
+            // InsertHOTPStatusTable
             // 
-            HOTPlabel.AutoSize = true;
-            HOTPlabel.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            HOTPlabel.Location = new Point(3, 70);
-            HOTPlabel.Name = "HOTPlabel";
-            HOTPlabel.Size = new Size(0, 18);
-            HOTPlabel.TabIndex = 14;
+            this.InsertHOTPStatusTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.InsertHOTPStatusTable.ColumnCount = 2;
+            this.InsertHOTPStatusTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.InsertHOTPStatusTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 0F));
+            this.InsertHOTPStatusTable.Controls.Add(this.InsertHOTPLabel, 0, 0);
+            this.InsertHOTPStatusTable.Controls.Add(this.HOTPStatusLabel, 1, 0);
+            this.InsertHOTPStatusTable.Location = new System.Drawing.Point(3, 41);
+            this.InsertHOTPStatusTable.Name = "InsertHOTPStatusTable";
+            this.InsertHOTPStatusTable.RowCount = 1;
+            this.InsertHOTPStatusTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.InsertHOTPStatusTable.Size = new System.Drawing.Size(762, 26);
+            this.InsertHOTPStatusTable.TabIndex = 7;
             // 
-            // pictureBox2
+            // InsertHOTPLabel
             // 
-            pictureBox2.Anchor = AnchorStyles.None;
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(399, 277);
-            pictureBox2.Margin = new Padding(3, 3, 3, 40);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(199, 62);
-            pictureBox2.TabIndex = 9;
-            pictureBox2.TabStop = false;
-            pictureBox2.Visible = false;
+            this.InsertHOTPLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.InsertHOTPLabel.AutoSize = true;
+            this.InsertHOTPLabel.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InsertHOTPLabel.Location = new System.Drawing.Point(274, 4);
+            this.InsertHOTPLabel.Name = "InsertHOTPLabel";
+            this.InsertHOTPLabel.Size = new System.Drawing.Size(214, 17);
+            this.InsertHOTPLabel.TabIndex = 6;
+            this.InsertHOTPLabel.Text = "Insert a FortiToken 410 to begin.";
+            this.InsertHOTPLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // HOTPStatusLabel
+            // 
+            this.HOTPStatusLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.HOTPStatusLabel.AutoSize = true;
+            this.HOTPStatusLabel.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HOTPStatusLabel.Location = new System.Drawing.Point(765, 4);
+            this.HOTPStatusLabel.Name = "HOTPStatusLabel";
+            this.HOTPStatusLabel.Size = new System.Drawing.Size(0, 17);
+            this.HOTPStatusLabel.TabIndex = 7;
+            this.HOTPStatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // KeyStateLabel
+            // 
+            this.KeyStateLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.KeyStateLabel.AutoSize = true;
+            this.KeyStateLabel.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.KeyStateLabel.Location = new System.Drawing.Point(384, 20);
+            this.KeyStateLabel.Name = "KeyStateLabel";
+            this.KeyStateLabel.Size = new System.Drawing.Size(0, 18);
+            this.KeyStateLabel.TabIndex = 8;
+            // 
+            // PromptLabel
+            // 
+            this.PromptLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.PromptLabel.AutoSize = true;
+            this.PromptLabel.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PromptLabel.Location = new System.Drawing.Point(127, 91);
+            this.PromptLabel.Name = "PromptLabel";
+            this.PromptLabel.Size = new System.Drawing.Size(514, 17);
+            this.PromptLabel.TabIndex = 9;
+            this.PromptLabel.Text = "Remove the key and insert a new key to continue or close the program to quit.";
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(96F, 96F);
-            AutoScaleMode = AutoScaleMode.Dpi;
-            ClientSize = new Size(1008, 729);
-            Controls.Add(tableLayoutPanel1);
-            Icon = (Icon)resources.GetObject("$this.Icon");
-            MaximizeBox = false;
-            MaximumSize = new Size(1024, 768);
-            MinimizeBox = false;
-            MinimumSize = new Size(1024, 768);
-            Name = "Form1";
-            Text = "FortiToken 410 Manager";
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            tableLayoutPanel1.ResumeLayout(false);
-            tableLayoutPanel2.ResumeLayout(false);
-            tableLayoutPanel2.PerformLayout();
-            tableLayoutPanel3.ResumeLayout(false);
-            tableLayoutPanel4.ResumeLayout(false);
-            tableLayoutPanel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ResumeLayout(false);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.ClientSize = new System.Drawing.Size(784, 461);
+            this.Controls.Add(this.MainTable);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(800, 500);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(800, 500);
+            this.Name = "Form1";
+            this.Text = "FortiToken 410 Manager";
+            ((System.ComponentModel.ISupportInitialize)(LogoImage)).EndInit();
+            this.MainTable.ResumeLayout(false);
+            this.MainTable.PerformLayout();
+            this.ButtonTable.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.TokenImage)).EndInit();
+            this.OutputTable.ResumeLayout(false);
+            this.OutputTable.PerformLayout();
+            this.InsertHOTPStatusTable.ResumeLayout(false);
+            this.InsertHOTPStatusTable.PerformLayout();
+            this.ResumeLayout(false);
+
         }
 
         #endregion
 
-        private TableLayoutPanel tableLayoutPanel1;
+        private TableLayoutPanel MainTable;
         private Button BtnDisableHOTP;
         private Button BtnEnableHOTP;
         private Label Title;
-        private TableLayoutPanel tableLayoutPanel3;
-        private Label label1;
-        private PictureBox pictureBox1;
-        private TableLayoutPanel tableLayoutPanel2;
-        private PictureBox pictureBox2;
-        private TableLayoutPanel tableLayoutPanel4;
-        private Label keyStatus;
-        private Label keyStateLabel;
-        private Label HOTPlabel;
+        private TableLayoutPanel ButtonTable;
+        private Label InsertHOTPLabel;
+        private PictureBox TokenImage;
+        private TableLayoutPanel OutputTable;
+        private TableLayoutPanel InsertHOTPStatusTable;
+        private Label KeyStateLabel;
+        private Label HOTPStatusLabel;
+        private Label PromptLabel;
     }
 }

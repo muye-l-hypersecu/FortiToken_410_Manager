@@ -1,6 +1,4 @@
-using Microsoft.VisualBasic;
 using System.Runtime.InteropServices;
-using System.Security.Principal;
 using Utility;
 using static Utility.HyperFIDO;
 
@@ -54,11 +52,11 @@ namespace FortiToken_410_Manager
 
         static void CSCallbackFunc(int n)
         {
-            Form1.MainForm.HOTPlabel.Text = "";
             if (n == 0) // nothing is inserted
             {
-                Form1.MainForm.keyStateLabel.Text = "FortiToken 410 not inserted";
-                Form1.MainForm.pictureBox2.Visible = false;
+                Form1.MainForm.KeyStateLabel.Text = "FortiToken 410 not found.";
+                Form1.MainForm.InsertHOTPLabel.Text = "Insert an FortiToken 410 to begin.";
+                Form1.MainForm.TokenImage.Visible = false;
                 Form1.MainForm.BtnDisableHOTP.Enabled = false;
                 Form1.MainForm.BtnEnableHOTP.Enabled = false;
                 fidoU2F_close();
@@ -70,22 +68,22 @@ namespace FortiToken_410_Manager
 
                 if (ret <= 0) // nothing is inserted or the inserted token is not FIDO
                 {
-                    Form1.MainForm.keyStateLabel.Text = "FortiToken 410 not inserted";
-                    Form1.MainForm.pictureBox2.Visible = false;
+                    Form1.MainForm.KeyStateLabel.Text = "FortiToken 410 not found";
+                    Form1.MainForm.TokenImage.Visible = false;
                     return;
                 }
 
                 ret = fidoU2F_open();
                 if (ret != 0)
                 {
-                    Form1.MainForm.keyStateLabel.Text = "Open key error.";
-                    Form1.MainForm.pictureBox2.Visible = false;
+                    Form1.MainForm.KeyStateLabel.Text = "Open key error.";
+                    Form1.MainForm.TokenImage.Visible = false;
                     return;
                 }
                 else
                 {
-                    Form1.MainForm.pictureBox2.Visible = true;
-                    Form1.MainForm.keyStateLabel.Text = "FortiToken 410 inserted";
+                    Form1.MainForm.TokenImage.Visible = true;
+                    Form1.MainForm.KeyStateLabel.Text = "FortiToken 410 connected.";
                     int p = fidoU2F_get_protocol();
 
                     switch (p)
@@ -94,15 +92,15 @@ namespace FortiToken_410_Manager
                             // This case shouldn't occur, and if it does, then you are probably not running as administrator.
                             break;
                         case 1:
-                            Form1.MainForm.HOTPlabel.Text = "HOTP disabled";
+                            Form1.MainForm.InsertHOTPLabel.Text = "HOTP disabled";
                             Form1.MainForm.BtnEnableHOTP.Enabled = true;
                             break;
                         case 2:
-                            Form1.MainForm.HOTPlabel.Text = "HOTP enabled";
+                            Form1.MainForm.InsertHOTPLabel.Text = "HOTP enabled";
                             Form1.MainForm.BtnDisableHOTP.Enabled = true;
                             break;
                         default:
-                            Form1.MainForm.keyStateLabel.Text = "\nKey Protocol is unavailable, Error code: " + ret.ToString("X");
+                            Form1.MainForm.KeyStateLabel.Text = "\nKey Protocol is unavailable, Error code: " + ret.ToString("X");
                             break;
 
                     }
@@ -191,7 +189,7 @@ namespace FortiToken_410_Manager
                     MsgBoxCaption = "";
                     MsgBoxButtons = MessageBoxButtons.OK;
 
-                    Form1.MainForm.HOTPlabel.Text = "HOTP enabled";
+                    Form1.MainForm.InsertHOTPLabel.Text = "HOTP enabled";
                     Form1.MainForm.BtnEnableHOTP.Enabled = false;
                     MsgBoxResult = MessageBox.Show(MsgBoxMessage, MsgBoxCaption, MsgBoxButtons, MessageBoxIcon.Information);
                 }
@@ -287,7 +285,7 @@ namespace FortiToken_410_Manager
                     MsgBoxCaption = "";
                     MsgBoxButtons = MessageBoxButtons.OK;
 
-                    Form1.MainForm.HOTPlabel.Text = "HOTP disabled";
+                    Form1.MainForm.InsertHOTPLabel.Text = "HOTP disabled";
                     Form1.MainForm.BtnDisableHOTP.Enabled = false;
                     //Form1.MainForm.promptLabel.Text = "Please unplug and reinsert the FortiToken 410 to re-enable HOTP.";
                     MsgBoxResult = MessageBox.Show(MsgBoxMessage, MsgBoxCaption, MsgBoxButtons, MessageBoxIcon.Information);
@@ -306,11 +304,6 @@ namespace FortiToken_410_Manager
 
             HyperFIDO.fidoU2F_close();
 
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
 
         }
     }
