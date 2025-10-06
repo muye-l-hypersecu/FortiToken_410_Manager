@@ -117,6 +117,7 @@
             this.BtnDisableHOTP.TabIndex = 1;
             this.BtnDisableHOTP.Text = "Disable HOTP";
             this.BtnDisableHOTP.UseVisualStyleBackColor = true;
+            this.BtnDisableHOTP.Click += new EventHandler(this.BtnDisableHOTP_Click);
             // 
             // BtnEnableHOTP
             // 
@@ -129,6 +130,7 @@
             this.BtnEnableHOTP.TabIndex = 0;
             this.BtnEnableHOTP.Text = "Re-Enable HOTP";
             this.BtnEnableHOTP.UseVisualStyleBackColor = true;
+            this.BtnEnableHOTP.Click += new EventHandler(this.BtnEnableHOTP_Click);
             // 
             // Title
             // 
