@@ -136,7 +136,7 @@ namespace FortiToken_410_Manager
             byte[] recvBuf = new byte[64];
             uint recvLen = 64;
 
-            MsgBoxMessage = "HOTP feature on this key will be enabled.\r\n\r\nClick Yes to continue, click No to cancel.";
+            MsgBoxMessage = "HOTP feature on this key will be re-enabled.\r\n\r\nClick Yes to continue, click No to cancel.";
             MsgBoxCaption = "";
             MsgBoxButtons = MessageBoxButtons.YesNo;
 
@@ -185,7 +185,7 @@ namespace FortiToken_410_Manager
             if (0 != ret)
             {
 
-                MsgBoxMessage = "Enable HOTP unsuccessful. Please try again.(" + ret.ToString("X") + ")";
+                MsgBoxMessage = "Re-enable HOTP unsuccessful. Please try again.(" + ret.ToString("X") + ")";
                 MsgBoxCaption = "";
                 MsgBoxButtons = MessageBoxButtons.OK;
 
@@ -201,7 +201,7 @@ namespace FortiToken_410_Manager
                 if ((recvBuf[0] == 0x90) && (recvBuf[1] == 0x00))
                 {
                     ModifyInsertHOTPStatusMessage(1);
-                    MsgBoxMessage = "Enable HOTP successful.\r\n\r\n";
+                    MsgBoxMessage = "Re-enable HOTP successful.\r\n\r\n";
                     MsgBoxCaption = "";
                     MsgBoxButtons = MessageBoxButtons.OK;
 
@@ -212,7 +212,7 @@ namespace FortiToken_410_Manager
                 }
                 else
                 {
-                    MsgBoxMessage = "Enable HOTP unsuccessful. Please try again.";
+                    MsgBoxMessage = "Re-enable HOTP unsuccessful. Please try again.";
                     MsgBoxCaption = "";
                     MsgBoxButtons = MessageBoxButtons.OK;
 
