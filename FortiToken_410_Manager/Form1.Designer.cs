@@ -37,11 +37,11 @@
             this.Title = new System.Windows.Forms.Label();
             this.TokenImage = new System.Windows.Forms.PictureBox();
             this.OutputTable = new System.Windows.Forms.TableLayoutPanel();
-            this.InsertHOTPLabel = new System.Windows.Forms.Label();
-            this.HOTPStatusLabel = new System.Windows.Forms.Label();
             this.KeyStateLabel = new System.Windows.Forms.Label();
             this.PromptLabel = new System.Windows.Forms.Label();
             this.HOTPStatusFlowContainer = new System.Windows.Forms.FlowLayoutPanel();
+            this.InsertHOTPLabel = new System.Windows.Forms.Label();
+            this.HOTPStatusLabel = new System.Windows.Forms.Label();
             LogoImage = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(LogoImage)).BeginInit();
             this.MainTable.SuspendLayout();
@@ -152,6 +152,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TokenImage.BackColor = System.Drawing.SystemColors.Control;
+            this.TokenImage.Image = global::FortiToken_410_Manager.Properties.Resources.FTK410_40transparency;
             this.TokenImage.Location = new System.Drawing.Point(3, 119);
             this.TokenImage.Name = "TokenImage";
             this.TokenImage.Size = new System.Drawing.Size(768, 91);
@@ -177,30 +178,6 @@
             this.OutputTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45F));
             this.OutputTable.Size = new System.Drawing.Size(768, 118);
             this.OutputTable.TabIndex = 10;
-            // 
-            // InsertHOTPLabel
-            // 
-            this.InsertHOTPLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.InsertHOTPLabel.AutoSize = true;
-            this.InsertHOTPLabel.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InsertHOTPLabel.Location = new System.Drawing.Point(0, 0);
-            this.InsertHOTPLabel.Margin = new System.Windows.Forms.Padding(0);
-            this.InsertHOTPLabel.Name = "InsertHOTPLabel";
-            this.InsertHOTPLabel.Size = new System.Drawing.Size(0, 17);
-            this.InsertHOTPLabel.TabIndex = 6;
-            this.InsertHOTPLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // HOTPStatusLabel
-            // 
-            this.HOTPStatusLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.HOTPStatusLabel.AutoSize = true;
-            this.HOTPStatusLabel.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HOTPStatusLabel.Location = new System.Drawing.Point(0, 0);
-            this.HOTPStatusLabel.Margin = new System.Windows.Forms.Padding(0);
-            this.HOTPStatusLabel.Name = "HOTPStatusLabel";
-            this.HOTPStatusLabel.Size = new System.Drawing.Size(0, 17);
-            this.HOTPStatusLabel.TabIndex = 7;
-            this.HOTPStatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // KeyStateLabel
             // 
@@ -232,6 +209,30 @@
             this.HOTPStatusFlowContainer.Name = "HOTPStatusFlowContainer";
             this.HOTPStatusFlowContainer.Size = new System.Drawing.Size(0, 17);
             this.HOTPStatusFlowContainer.TabIndex = 10;
+            // 
+            // InsertHOTPLabel
+            // 
+            this.InsertHOTPLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.InsertHOTPLabel.AutoSize = true;
+            this.InsertHOTPLabel.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InsertHOTPLabel.Location = new System.Drawing.Point(0, 0);
+            this.InsertHOTPLabel.Margin = new System.Windows.Forms.Padding(0);
+            this.InsertHOTPLabel.Name = "InsertHOTPLabel";
+            this.InsertHOTPLabel.Size = new System.Drawing.Size(0, 17);
+            this.InsertHOTPLabel.TabIndex = 6;
+            this.InsertHOTPLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // HOTPStatusLabel
+            // 
+            this.HOTPStatusLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.HOTPStatusLabel.AutoSize = true;
+            this.HOTPStatusLabel.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HOTPStatusLabel.Location = new System.Drawing.Point(0, 0);
+            this.HOTPStatusLabel.Margin = new System.Windows.Forms.Padding(0);
+            this.HOTPStatusLabel.Name = "HOTPStatusLabel";
+            this.HOTPStatusLabel.Size = new System.Drawing.Size(0, 17);
+            this.HOTPStatusLabel.TabIndex = 7;
+            this.HOTPStatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // Form1
             // 
