@@ -335,8 +335,6 @@ namespace FortiToken_410_Manager
         /// </summary>
         static void ModifyInsertHOTPStatusMessage(int op)
         {
-            Form1.MainForm.InsertHOTPStatusTable.ColumnStyles[0].SizeType = SizeType.Percent;
-            Form1.MainForm.InsertHOTPStatusTable.ColumnStyles[1].SizeType = SizeType.Percent;
             switch (op)
             {
                 case 0:
@@ -346,8 +344,6 @@ namespace FortiToken_410_Manager
                     Form1.MainForm.InsertHOTPLabel.Text = "Insert a FortiToken 410 to begin.";
                     Form1.MainForm.HOTPStatusLabel.Text = "";
 
-                    Form1.MainForm.InsertHOTPStatusTable.ColumnStyles[0].Width = 100f;
-                    Form1.MainForm.InsertHOTPStatusTable.ColumnStyles[1].Width = 0f;
                     break;
                 case 1:
                     Form1.MainForm.InsertHOTPLabel.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -356,8 +352,6 @@ namespace FortiToken_410_Manager
 
                     Form1.MainForm.InsertHOTPLabel.Text = "HOTP Status:";
                     Form1.MainForm.HOTPStatusLabel.Text = "Enabled";
-                    Form1.MainForm.InsertHOTPStatusTable.ColumnStyles[0].Width = 53f;
-                    Form1.MainForm.InsertHOTPStatusTable.ColumnStyles[1].Width = 47f;
                     break;
                 case 2:
                     Form1.MainForm.InsertHOTPLabel.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -366,8 +360,6 @@ namespace FortiToken_410_Manager
 
                     Form1.MainForm.InsertHOTPLabel.Text = "HOTP Status:";
                     Form1.MainForm.HOTPStatusLabel.Text = "Disabled";
-                    Form1.MainForm.InsertHOTPStatusTable.ColumnStyles[0].Width = 52.5f;
-                    Form1.MainForm.InsertHOTPStatusTable.ColumnStyles[1].Width = 47.5f;
                     break;
             }
         }

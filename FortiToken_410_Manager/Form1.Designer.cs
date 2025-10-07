@@ -37,18 +37,18 @@
             this.Title = new System.Windows.Forms.Label();
             this.TokenImage = new System.Windows.Forms.PictureBox();
             this.OutputTable = new System.Windows.Forms.TableLayoutPanel();
-            this.InsertHOTPStatusTable = new System.Windows.Forms.TableLayoutPanel();
             this.InsertHOTPLabel = new System.Windows.Forms.Label();
             this.HOTPStatusLabel = new System.Windows.Forms.Label();
             this.KeyStateLabel = new System.Windows.Forms.Label();
             this.PromptLabel = new System.Windows.Forms.Label();
+            this.HOTPStatusFlowContainer = new System.Windows.Forms.FlowLayoutPanel();
             LogoImage = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(LogoImage)).BeginInit();
             this.MainTable.SuspendLayout();
             this.ButtonTable.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TokenImage)).BeginInit();
             this.OutputTable.SuspendLayout();
-            this.InsertHOTPStatusTable.SuspendLayout();
+            this.HOTPStatusFlowContainer.SuspendLayout();
             this.SuspendLayout();
             // 
             // LogoImage
@@ -166,9 +166,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.OutputTable.ColumnCount = 1;
             this.OutputTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.OutputTable.Controls.Add(this.InsertHOTPStatusTable, 0, 1);
             this.OutputTable.Controls.Add(this.KeyStateLabel, 0, 0);
             this.OutputTable.Controls.Add(this.PromptLabel, 0, 2);
+            this.OutputTable.Controls.Add(this.HOTPStatusFlowContainer, 0, 1);
             this.OutputTable.Location = new System.Drawing.Point(3, 216);
             this.OutputTable.Name = "OutputTable";
             this.OutputTable.RowCount = 3;
@@ -178,29 +178,12 @@
             this.OutputTable.Size = new System.Drawing.Size(768, 118);
             this.OutputTable.TabIndex = 10;
             // 
-            // InsertHOTPStatusTable
-            // 
-            this.InsertHOTPStatusTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.InsertHOTPStatusTable.ColumnCount = 2;
-            this.InsertHOTPStatusTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.InsertHOTPStatusTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 0F));
-            this.InsertHOTPStatusTable.Controls.Add(this.InsertHOTPLabel, 0, 0);
-            this.InsertHOTPStatusTable.Controls.Add(this.HOTPStatusLabel, 1, 0);
-            this.InsertHOTPStatusTable.Location = new System.Drawing.Point(3, 38);
-            this.InsertHOTPStatusTable.Name = "InsertHOTPStatusTable";
-            this.InsertHOTPStatusTable.RowCount = 1;
-            this.InsertHOTPStatusTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.InsertHOTPStatusTable.Size = new System.Drawing.Size(762, 23);
-            this.InsertHOTPStatusTable.TabIndex = 7;
-            // 
             // InsertHOTPLabel
             // 
             this.InsertHOTPLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.InsertHOTPLabel.AutoSize = true;
             this.InsertHOTPLabel.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InsertHOTPLabel.Location = new System.Drawing.Point(381, 3);
+            this.InsertHOTPLabel.Location = new System.Drawing.Point(0, 0);
             this.InsertHOTPLabel.Margin = new System.Windows.Forms.Padding(0);
             this.InsertHOTPLabel.Name = "InsertHOTPLabel";
             this.InsertHOTPLabel.Size = new System.Drawing.Size(0, 17);
@@ -212,7 +195,7 @@
             this.HOTPStatusLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.HOTPStatusLabel.AutoSize = true;
             this.HOTPStatusLabel.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HOTPStatusLabel.Location = new System.Drawing.Point(762, 3);
+            this.HOTPStatusLabel.Location = new System.Drawing.Point(0, 0);
             this.HOTPStatusLabel.Margin = new System.Windows.Forms.Padding(0);
             this.HOTPStatusLabel.Name = "HOTPStatusLabel";
             this.HOTPStatusLabel.Size = new System.Drawing.Size(0, 17);
@@ -239,6 +222,17 @@
             this.PromptLabel.Size = new System.Drawing.Size(0, 17);
             this.PromptLabel.TabIndex = 9;
             // 
+            // HOTPStatusFlowContainer
+            // 
+            this.HOTPStatusFlowContainer.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.HOTPStatusFlowContainer.AutoSize = true;
+            this.HOTPStatusFlowContainer.Controls.Add(this.InsertHOTPLabel);
+            this.HOTPStatusFlowContainer.Controls.Add(this.HOTPStatusLabel);
+            this.HOTPStatusFlowContainer.Location = new System.Drawing.Point(384, 41);
+            this.HOTPStatusFlowContainer.Name = "HOTPStatusFlowContainer";
+            this.HOTPStatusFlowContainer.Size = new System.Drawing.Size(0, 17);
+            this.HOTPStatusFlowContainer.TabIndex = 10;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -259,8 +253,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.TokenImage)).EndInit();
             this.OutputTable.ResumeLayout(false);
             this.OutputTable.PerformLayout();
-            this.InsertHOTPStatusTable.ResumeLayout(false);
-            this.InsertHOTPStatusTable.PerformLayout();
+            this.HOTPStatusFlowContainer.ResumeLayout(false);
+            this.HOTPStatusFlowContainer.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -275,9 +269,9 @@
         private Label InsertHOTPLabel;
         private PictureBox TokenImage;
         private TableLayoutPanel OutputTable;
-        private TableLayoutPanel InsertHOTPStatusTable;
         private Label KeyStateLabel;
         private Label HOTPStatusLabel;
         private Label PromptLabel;
+        private FlowLayoutPanel HOTPStatusFlowContainer;
     }
 }
