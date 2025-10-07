@@ -13,9 +13,7 @@
     <Copyright>Copyright (C) 2025 Hypersecu Information Systems Inc.</Copyright>
     <Authors>FortiToken 410 Manager</Authors>
     <Version>1.0.0.0</Version>
-	<FileVersion>1.0.0.0</FileVersion>
-	<InformationalVersion>1.0.0.0</InformationalVersion>
-	<AssemblyVersion>1.0.0.0</AssemblyVersion>
+	<FileVersion>1.1.25.1007</FileVersion>
     <Product>FortiToken_410_Manager</Product>
     <PackageId>FortiToken 410 Manager</PackageId>
     <Title>FortiToken 410 Manager</Title>
