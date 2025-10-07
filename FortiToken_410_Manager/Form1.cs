@@ -60,8 +60,7 @@ namespace FortiToken_410_Manager
 
                 Form1.MainForm.KeyStateLabel.Text = "FortiToken 410 not found.";
                 Form1.MainForm.InsertHOTPLabel.Text = "Insert an FortiToken 410 to begin.";
-                Form1.MainForm.TokenImage.Image = Image.FromFile(Path.Combine(Path.GetDirectoryName
-                        (Assembly.GetExecutingAssembly().Location), "FTKImages/FTK410_40transparency.png"));
+                Form1.MainForm.TokenImage.Image = FortiToken_410_Manager.Properties.Resources.FTK410_40transparency;
                 Form1.MainForm.PromptLabel.Visible = false;
                 Form1.MainForm.BtnDisableHOTP.Enabled = false;
                 Form1.MainForm.BtnEnableHOTP.Enabled = false;
@@ -79,8 +78,7 @@ namespace FortiToken_410_Manager
 
                     Form1.MainForm.InsertHOTPLabel.Text = "Insert a FortiToken 410 to begin.";
                     Form1.MainForm.KeyStateLabel.Text = "FortiToken 410 not found.";
-                    Form1.MainForm.TokenImage.Image = Image.FromFile(Path.Combine(Path.GetDirectoryName
-                        (Assembly.GetExecutingAssembly().Location), "FTKImages/FTK410_40transparency.png"));
+                    Form1.MainForm.TokenImage.Image = FortiToken_410_Manager.Properties.Resources.FTK410_40transparency;
                     return;
                 }
 
@@ -88,14 +86,12 @@ namespace FortiToken_410_Manager
                 if (ret != 0)
                 {
                     Form1.MainForm.KeyStateLabel.Text = "Open key error.";
-                    Form1.MainForm.TokenImage.Image = Image.FromFile(Path.Combine(Path.GetDirectoryName
-                        (Assembly.GetExecutingAssembly().Location), "FTKImages/FTK410_40transparency.png"));
+                    Form1.MainForm.TokenImage.Image = FortiToken_410_Manager.Properties.Resources.FTK410_40transparency;
                     return;
                 }
                 else
                 {
-                    Form1.MainForm.TokenImage.Image = Image.FromFile(Path.Combine(Path.GetDirectoryName
-                        (Assembly.GetExecutingAssembly().Location), "FTKImages/FTK410.png"));
+                    Form1.MainForm.TokenImage.Image = FortiToken_410_Manager.Properties.Resources.FTK410;
                     Form1.MainForm.KeyStateLabel.Text = "FortiToken 410 connected.";
                     int p = fidoU2F_get_protocol();
 

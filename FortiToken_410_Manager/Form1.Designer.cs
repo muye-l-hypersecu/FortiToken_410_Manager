@@ -152,7 +152,6 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TokenImage.BackColor = System.Drawing.SystemColors.Control;
-            this.TokenImage.Image = ((System.Drawing.Image)(resources.GetObject("TokenImage.Image")));
             this.TokenImage.Location = new System.Drawing.Point(3, 119);
             this.TokenImage.Name = "TokenImage";
             this.TokenImage.Size = new System.Drawing.Size(768, 91);
