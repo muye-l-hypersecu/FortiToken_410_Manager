@@ -8,6 +8,9 @@ namespace FortiToken_410_Manager
     {
         public static Form1 MainForm = null;
         int DisplayAPDU = 1;
+        const string ImagePathClear = "C:\\Code\\FortiToken_410_Manager - new version\\FortiToken_410_Manager\\FTK410.png";
+        const string ImagePathTransparent = "C:\\Code\\FortiToken_410_Manager - new version\\FortiToken_410_Manager\\FTK410_40transparency.png";
+
 
         // public defines
         string MsgBoxMessage = "";
@@ -59,7 +62,8 @@ namespace FortiToken_410_Manager
 
                 Form1.MainForm.KeyStateLabel.Text = "FortiToken 410 not found.";
                 Form1.MainForm.InsertHOTPLabel.Text = "Insert an FortiToken 410 to begin.";
-                Form1.MainForm.TokenImage.Visible = false;
+                Form1.MainForm.TokenImage.Image = Image.FromFile(ImagePathTransparent);
+                Form1.MainForm.PromptLabel.Visible = false;
                 Form1.MainForm.BtnDisableHOTP.Enabled = false;
                 Form1.MainForm.BtnEnableHOTP.Enabled = false;
                 fidoU2F_close();
@@ -76,7 +80,7 @@ namespace FortiToken_410_Manager
 
                     Form1.MainForm.InsertHOTPLabel.Text = "Insert a FortiToken 410 to begin.";
                     Form1.MainForm.KeyStateLabel.Text = "FortiToken 410 not found.";
-                    Form1.MainForm.TokenImage.Visible = false;
+                    Form1.MainForm.TokenImage.Image = Image.FromFile(ImagePathTransparent);
                     return;
                 }
 
@@ -84,12 +88,12 @@ namespace FortiToken_410_Manager
                 if (ret != 0)
                 {
                     Form1.MainForm.KeyStateLabel.Text = "Open key error.";
-                    Form1.MainForm.TokenImage.Visible = false;
+                    Form1.MainForm.TokenImage.Image = Image.FromFile(ImagePathTransparent);
                     return;
                 }
                 else
                 {
-                    Form1.MainForm.TokenImage.Visible = true;
+                    Form1.MainForm.TokenImage.Image = Image.FromFile(ImagePathClear);
                     Form1.MainForm.KeyStateLabel.Text = "FortiToken 410 connected.";
                     int p = fidoU2F_get_protocol();
 
@@ -104,6 +108,11 @@ namespace FortiToken_410_Manager
                             Form1.MainForm.InsertHOTPLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Right)));
 
                             Form1.MainForm.InsertHOTPLabel.Text = "HOTP Status: ";
+
+                            Form1.MainForm.PromptLabel.Visible = true;
+                            Form1.MainForm.PromptLabel.Font = new Font(Form1.MainForm.PromptLabel.Font, FontStyle.Bold | FontStyle.Italic);
+                            Form1.MainForm.PromptLabel.Text = "Do not re-enable HOTP unless required.";
+
                             Form1.MainForm.BtnEnableHOTP.Enabled = true;
                             break;
                         case 2:
@@ -204,6 +213,8 @@ namespace FortiToken_410_Manager
                     MsgBoxButtons = MessageBoxButtons.OK;
 
                     Form1.MainForm.BtnEnableHOTP.Enabled = false;
+                    Form1.MainForm.PromptLabel.Font = new Font(Form1.MainForm.PromptLabel.Font, FontStyle.Regular | FontStyle.Italic);
+                    Form1.MainForm.PromptLabel.Text = "Remove the key and insert a new key to continue or close the program to quit.";
                     MsgBoxResult = MessageBox.Show(MsgBoxMessage, MsgBoxCaption, MsgBoxButtons, MessageBoxIcon.Information);
                 }
                 else
@@ -299,7 +310,9 @@ namespace FortiToken_410_Manager
                     MsgBoxButtons = MessageBoxButtons.OK;
 
                     Form1.MainForm.BtnDisableHOTP.Enabled = false;
-                    //Form1.MainForm.promptLabel.Text = "Please unplug and reinsert the FortiToken 410 to re-enable HOTP.";
+                    Form1.MainForm.PromptLabel.Visible = true;
+                    Form1.MainForm.PromptLabel.Font = new Font(Form1.MainForm.PromptLabel.Font, FontStyle.Regular | FontStyle.Italic);
+                    Form1.MainForm.PromptLabel.Text = "Remove the key and insert a new key to continue or close the program to quit.";
                     MsgBoxResult = MessageBox.Show(MsgBoxMessage, MsgBoxCaption, MsgBoxButtons, MessageBoxIcon.Information);
                     //BtnDisableHOTP.Enabled = false;
                 }

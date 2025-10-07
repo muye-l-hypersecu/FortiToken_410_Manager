@@ -81,9 +81,9 @@
             this.MainTable.Name = "MainTable";
             this.MainTable.RowCount = 5;
             this.MainTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12F));
-            this.MainTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13F));
-            this.MainTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.MainTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.MainTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.74723F));
+            this.MainTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 21.50776F));
+            this.MainTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 27.49446F));
             this.MainTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.MainTable.Size = new System.Drawing.Size(774, 451);
             this.MainTable.TabIndex = 0;
@@ -138,7 +138,7 @@
             this.Title.AutoSize = true;
             this.Title.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Title.ForeColor = System.Drawing.Color.Black;
-            this.Title.Location = new System.Drawing.Point(223, 68);
+            this.Title.Location = new System.Drawing.Point(223, 70);
             this.Title.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.Title.Name = "Title";
             this.Title.Size = new System.Drawing.Size(328, 32);
@@ -148,15 +148,17 @@
             // 
             // TokenImage
             // 
-            this.TokenImage.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.TokenImage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TokenImage.BackColor = System.Drawing.SystemColors.Control;
             this.TokenImage.Image = ((System.Drawing.Image)(resources.GetObject("TokenImage.Image")));
-            this.TokenImage.Location = new System.Drawing.Point(290, 128);
+            this.TokenImage.Location = new System.Drawing.Point(3, 119);
             this.TokenImage.Name = "TokenImage";
-            this.TokenImage.Size = new System.Drawing.Size(194, 58);
+            this.TokenImage.Size = new System.Drawing.Size(768, 91);
             this.TokenImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.TokenImage.TabIndex = 9;
             this.TokenImage.TabStop = false;
-            this.TokenImage.Visible = false;
             // 
             // OutputTable
             // 
@@ -168,13 +170,13 @@
             this.OutputTable.Controls.Add(this.InsertHOTPStatusTable, 0, 1);
             this.OutputTable.Controls.Add(this.KeyStateLabel, 0, 0);
             this.OutputTable.Controls.Add(this.PromptLabel, 0, 2);
-            this.OutputTable.Location = new System.Drawing.Point(3, 205);
+            this.OutputTable.Location = new System.Drawing.Point(3, 216);
             this.OutputTable.Name = "OutputTable";
             this.OutputTable.RowCount = 3;
             this.OutputTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.OutputTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.OutputTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45F));
-            this.OutputTable.Size = new System.Drawing.Size(768, 129);
+            this.OutputTable.Size = new System.Drawing.Size(768, 118);
             this.OutputTable.TabIndex = 10;
             // 
             // InsertHOTPStatusTable
@@ -187,11 +189,11 @@
             this.InsertHOTPStatusTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 0F));
             this.InsertHOTPStatusTable.Controls.Add(this.InsertHOTPLabel, 0, 0);
             this.InsertHOTPStatusTable.Controls.Add(this.HOTPStatusLabel, 1, 0);
-            this.InsertHOTPStatusTable.Location = new System.Drawing.Point(3, 41);
+            this.InsertHOTPStatusTable.Location = new System.Drawing.Point(3, 38);
             this.InsertHOTPStatusTable.Name = "InsertHOTPStatusTable";
             this.InsertHOTPStatusTable.RowCount = 1;
             this.InsertHOTPStatusTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.InsertHOTPStatusTable.Size = new System.Drawing.Size(762, 26);
+            this.InsertHOTPStatusTable.Size = new System.Drawing.Size(762, 23);
             this.InsertHOTPStatusTable.TabIndex = 7;
             // 
             // InsertHOTPLabel
@@ -199,7 +201,7 @@
             this.InsertHOTPLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.InsertHOTPLabel.AutoSize = true;
             this.InsertHOTPLabel.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InsertHOTPLabel.Location = new System.Drawing.Point(381, 4);
+            this.InsertHOTPLabel.Location = new System.Drawing.Point(381, 3);
             this.InsertHOTPLabel.Name = "InsertHOTPLabel";
             this.InsertHOTPLabel.Size = new System.Drawing.Size(0, 17);
             this.InsertHOTPLabel.TabIndex = 6;
@@ -210,7 +212,7 @@
             this.HOTPStatusLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.HOTPStatusLabel.AutoSize = true;
             this.HOTPStatusLabel.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HOTPStatusLabel.Location = new System.Drawing.Point(765, 4);
+            this.HOTPStatusLabel.Location = new System.Drawing.Point(765, 3);
             this.HOTPStatusLabel.Name = "HOTPStatusLabel";
             this.HOTPStatusLabel.Size = new System.Drawing.Size(0, 17);
             this.HOTPStatusLabel.TabIndex = 7;
@@ -221,7 +223,7 @@
             this.KeyStateLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.KeyStateLabel.AutoSize = true;
             this.KeyStateLabel.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.KeyStateLabel.Location = new System.Drawing.Point(384, 20);
+            this.KeyStateLabel.Location = new System.Drawing.Point(384, 17);
             this.KeyStateLabel.Name = "KeyStateLabel";
             this.KeyStateLabel.Size = new System.Drawing.Size(0, 18);
             this.KeyStateLabel.TabIndex = 8;
@@ -231,11 +233,10 @@
             this.PromptLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.PromptLabel.AutoSize = true;
             this.PromptLabel.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PromptLabel.Location = new System.Drawing.Point(127, 91);
+            this.PromptLabel.Location = new System.Drawing.Point(384, 82);
             this.PromptLabel.Name = "PromptLabel";
-            this.PromptLabel.Size = new System.Drawing.Size(514, 17);
+            this.PromptLabel.Size = new System.Drawing.Size(0, 17);
             this.PromptLabel.TabIndex = 9;
-            this.PromptLabel.Text = "Remove the key and insert a new key to continue or close the program to quit.";
             // 
             // Form1
             // 
