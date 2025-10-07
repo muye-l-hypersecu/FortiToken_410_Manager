@@ -57,8 +57,8 @@
             LogoImage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             LogoImage.Image = ((System.Drawing.Image)(resources.GetObject("LogoImage.Image")));
             LogoImage.InitialImage = null;
-            LogoImage.Location = new System.Drawing.Point(574, 20);
-            LogoImage.Margin = new System.Windows.Forms.Padding(3, 20, 30, 3);
+            LogoImage.Location = new System.Drawing.Point(577, 18);
+            LogoImage.Margin = new System.Windows.Forms.Padding(3, 18, 27, 3);
             LogoImage.Name = "LogoImage";
             LogoImage.Size = new System.Drawing.Size(170, 26);
             LogoImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -201,21 +201,23 @@
             this.InsertHOTPLabel.AutoSize = true;
             this.InsertHOTPLabel.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.InsertHOTPLabel.Location = new System.Drawing.Point(381, 3);
+            this.InsertHOTPLabel.Margin = new System.Windows.Forms.Padding(0);
             this.InsertHOTPLabel.Name = "InsertHOTPLabel";
             this.InsertHOTPLabel.Size = new System.Drawing.Size(0, 17);
             this.InsertHOTPLabel.TabIndex = 6;
-            this.InsertHOTPLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.InsertHOTPLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // HOTPStatusLabel
             // 
             this.HOTPStatusLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.HOTPStatusLabel.AutoSize = true;
             this.HOTPStatusLabel.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HOTPStatusLabel.Location = new System.Drawing.Point(765, 3);
+            this.HOTPStatusLabel.Location = new System.Drawing.Point(762, 3);
+            this.HOTPStatusLabel.Margin = new System.Windows.Forms.Padding(0);
             this.HOTPStatusLabel.Name = "HOTPStatusLabel";
             this.HOTPStatusLabel.Size = new System.Drawing.Size(0, 17);
             this.HOTPStatusLabel.TabIndex = 7;
-            this.HOTPStatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.HOTPStatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // KeyStateLabel
             // 

@@ -55,9 +55,7 @@ namespace FortiToken_410_Manager
         {
             if (n == 0) // nothing is inserted
             {
-                Form1.MainForm.InsertHOTPLabel.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                Form1.MainForm.InsertHOTPLabel.Anchor = AnchorStyles.None;
-
+                ModifyInsertHOTPStatusMessage(0);
                 Form1.MainForm.KeyStateLabel.Text = "FortiToken 410 not found.";
                 Form1.MainForm.InsertHOTPLabel.Text = "Insert an FortiToken 410 to begin.";
                 Form1.MainForm.TokenImage.Image = FortiToken_410_Manager.Properties.Resources.FTK410_40transparency;
@@ -73,10 +71,7 @@ namespace FortiToken_410_Manager
 
                 if (ret <= 0) // nothing is inserted or the inserted token is not FIDO
                 {
-                    Form1.MainForm.InsertHOTPLabel.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                    Form1.MainForm.InsertHOTPLabel.Anchor = AnchorStyles.None;
-
-                    Form1.MainForm.InsertHOTPLabel.Text = "Insert a FortiToken 410 to begin.";
+                    ModifyInsertHOTPStatusMessage(0);
                     Form1.MainForm.KeyStateLabel.Text = "FortiToken 410 not found.";
                     Form1.MainForm.TokenImage.Image = FortiToken_410_Manager.Properties.Resources.FTK410_40transparency;
                     return;
@@ -102,10 +97,7 @@ namespace FortiToken_410_Manager
                             break;
                         case 1:
                             // Token is currently disabled
-                            Form1.MainForm.InsertHOTPLabel.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                            Form1.MainForm.InsertHOTPLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Right)));
-
-                            Form1.MainForm.InsertHOTPLabel.Text = "HOTP Status: ";
+                            ModifyInsertHOTPStatusMessage(2);
 
                             Form1.MainForm.PromptLabel.Visible = true;
                             Form1.MainForm.PromptLabel.Font = new Font(Form1.MainForm.PromptLabel.Font, FontStyle.Bold | FontStyle.Italic);
@@ -115,6 +107,8 @@ namespace FortiToken_410_Manager
                             break;
                         case 2:
                             // Token is currently enabled
+                            ModifyInsertHOTPStatusMessage(1);
+
                             Form1.MainForm.InsertHOTPLabel.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                             Form1.MainForm.InsertHOTPLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Right)));
                             Form1.MainForm.InsertHOTPLabel.Text = "HOTP Status: ";
@@ -206,6 +200,7 @@ namespace FortiToken_410_Manager
 
                 if ((recvBuf[0] == 0x90) && (recvBuf[1] == 0x00))
                 {
+                    ModifyInsertHOTPStatusMessage(1);
                     MsgBoxMessage = "Enable HOTP successful.\r\n\r\n";
                     MsgBoxCaption = "";
                     MsgBoxButtons = MessageBoxButtons.OK;
@@ -303,6 +298,7 @@ namespace FortiToken_410_Manager
             {
                 if ((recvBuf[0] == 0x90) && (recvBuf[1] == 0x00))
                 {
+                    ModifyInsertHOTPStatusMessage(2);
                     MsgBoxMessage = "Disable HOTP successful.\r\n\r\n";
                     MsgBoxCaption = "";
                     MsgBoxButtons = MessageBoxButtons.OK;
@@ -337,15 +333,41 @@ namespace FortiToken_410_Manager
         /// - 1 for enabled configuration
         /// - 2 for disabled configuration
         /// </summary>
-        void ModifyInsert(int op)
+        static void ModifyInsertHOTPStatusMessage(int op)
         {
+            Form1.MainForm.InsertHOTPStatusTable.ColumnStyles[0].SizeType = SizeType.Percent;
+            Form1.MainForm.InsertHOTPStatusTable.ColumnStyles[1].SizeType = SizeType.Percent;
             switch (op)
             {
                 case 0:
+                    Form1.MainForm.InsertHOTPLabel.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                    Form1.MainForm.InsertHOTPLabel.Anchor = AnchorStyles.None;
+
+                    Form1.MainForm.InsertHOTPLabel.Text = "Insert a FortiToken 410 to begin.";
+                    Form1.MainForm.HOTPStatusLabel.Text = "";
+
+                    Form1.MainForm.InsertHOTPStatusTable.ColumnStyles[0].Width = 100f;
+                    Form1.MainForm.InsertHOTPStatusTable.ColumnStyles[1].Width = 0f;
                     break;
                 case 1:
+                    Form1.MainForm.InsertHOTPLabel.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                    Form1.MainForm.InsertHOTPLabel.Anchor = AnchorStyles.Right;
+                    Form1.MainForm.HOTPStatusLabel.ForeColor = Color.Black;
+
+                    Form1.MainForm.InsertHOTPLabel.Text = "HOTP Status:";
+                    Form1.MainForm.HOTPStatusLabel.Text = "Enabled";
+                    Form1.MainForm.InsertHOTPStatusTable.ColumnStyles[0].Width = 53f;
+                    Form1.MainForm.InsertHOTPStatusTable.ColumnStyles[1].Width = 47f;
                     break;
                 case 2:
+                    Form1.MainForm.InsertHOTPLabel.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                    Form1.MainForm.InsertHOTPLabel.Anchor = AnchorStyles.Right;
+                    Form1.MainForm.HOTPStatusLabel.ForeColor = Color.Green;
+
+                    Form1.MainForm.InsertHOTPLabel.Text = "HOTP Status:";
+                    Form1.MainForm.HOTPStatusLabel.Text = "Disabled";
+                    Form1.MainForm.InsertHOTPStatusTable.ColumnStyles[0].Width = 52.5f;
+                    Form1.MainForm.InsertHOTPStatusTable.ColumnStyles[1].Width = 47.5f;
                     break;
             }
         }
